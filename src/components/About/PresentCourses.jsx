@@ -100,7 +100,7 @@ const courseModules = [
         id: 2,
         name: "Relații internaționale",
         description:
-          "Students learn programming fundamentals through creating their own games and interactive stories using block-based coding platforms designed for young learners.",
+          "Ești interesat de relațiile diplomatice dintre state? Vrei să afli mai multe despre cum funcționează mecanismele din spatele instituțiilor care guvernează, despre regimurile politice și chiar despre drepturile tale? Hai la cursul „Relații internaționale”, susținut de Rebeca Bașuț și Teodora Bălăceanu, unde îți vom răspunde la toate aceste întrebări și la multe altele, punând toate informațiile în contexte actuale și relevante pentru generația noastră.",
         teacher: "Rebeca Bășuț & Teodora Bălăceanu",
         place: "Str. Duzilor nr. 23",
         timeperiod: "Luni, 19:30 - 21:30",
@@ -120,7 +120,7 @@ const courseModules = [
         id: 4,
         name: "To be or not to be",
         description:
-          "Children design, build, and program simple robots while learning engineering concepts, spatial thinking, and collaborative problem-solving skills.",
+          'Vrei să afli mai multe despre tine, să-ți ieși din zona de confort și să înveți să te exprimi liber? ✨ Dacă răspunsul este da, atunci cursul "To be or not to be", susținut de Patricia Katona, s-ar putea să fie exact ce ai nevoie.Prin intermediul jocurilor de actorie și de improvizație, te vom ajuta să scapi de inhibiții și să faci cunoștință cu varianta ta cea mai autentică. 🎭  Promitem că o să te distrezi tare!!',
         teacher: "Patricia Katone",
         place: "Str. Duzilor nr. 23",
         timeperiod: "Marți, 19:30 - 21:30",
@@ -250,8 +250,7 @@ const PresentCoursesSection = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            Explore our diverse range of courses designed to inspire curiosity, creativity, and growth. Each course
-            provides a supportive environment where children can develop new skills and discover their passions.
+            Explorați câteva dintre cursurile noastre diverse concepute pentru a inspira curiozitate, creativitate și creștere. Fiecare curs reprezintă un mediu de susținere în care copiii își pot dezvolta noi abilități și își pot descoperi pasiunile.
           </p>
         </div>
 

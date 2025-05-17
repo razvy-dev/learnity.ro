@@ -22,6 +22,10 @@ import UnpluggedEducation from "./components/UnpluggedEducation/UnpluggedEducati
 import Contact from "./pages/Contact"
 import NewsletterArchive from "./pages/Newsletter"
 import WhatTheFuture from "./components/WTF/WTF"
+import ChangemakersCamp from "./pages/Changemakers"
+import DareYourself from "./pages/Dare"
+import NextExperiences from "./pages/Next"
+import ComingSoon from "./components/ComingSoon"
 
 const Layout = () => {
   return (
@@ -56,6 +60,10 @@ const AppRoutes = () => {
         { path: '/account', element: <Account /> },
         { path: '/thank-you', element: <ThankYou /> },
         { path: '/unplugged-education', element: <UnpluggedEducation /> },
+        { path: '/changemakers-camp', element: <ChangemakersCamp /> },
+        { path: '/dare-yourself', element: <DareYourself /> },
+        { path: '/next-experiences', element: <NextExperiences />},
+        { path: '/coming-soon', element: <ComingSoon /> },
         { path: '*', element: <NotFound /> },
       ]
     }

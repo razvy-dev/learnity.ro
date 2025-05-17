@@ -14,7 +14,7 @@ const workshops = [
     image: g1,
     teacher: "The Kryptonite Sparks",
     date: "11 decembrie, 2024",
-    link: "/workshops/storytelling",
+    link: "/guided-learning",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const workshops = [
     image: g3,
     teacher: "Caravana cu medici",
     date: "19 martie, 2025",
-    link: "/workshops/science",
+    link: "/guided-learning",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const workshops = [
     image: g2,
     teacher: "Alex Necșulescu",
     date: "26 februarie, 2025",
-    link: "/workshops/digital-art",
+    link: "/guided-learning",
   },
 ]
 
@@ -119,7 +119,7 @@ const GuidedExamples = () => {
                   to={workshop.link}
                   className="group flex items-center justify-between bg-customBlue hover:bg-customOrange text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors duration-300 w-full"
                 >
-                  <span>Learn More</span>
+                  <span>Vezi mai multe</span>
                   <ArrowRight
                     size={16}
                     className="transform group-hover:translate-x-1 transition-transform duration-300"
@@ -136,10 +136,10 @@ const GuidedExamples = () => {
           style={{ transitionDelay: "0.7s" }}
         >
           <Link
-            to="/workshops"
+            to="/guided-learning"
             className="inline-flex items-center bg-white border-2 border-customBlue hover:bg-customBlue text-customBlue hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md"
           >
-            View All Workshops
+            Vezi toate workshop-urile
             <ArrowRight className="ml-2" size={20} />
           </Link>
         </div>

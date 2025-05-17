@@ -11,36 +11,36 @@ const playgroundAreas = [
     id: 1,
     name: "The Arena",
     description:
-      "Our active play space where children develop physical skills through movement, games, and sports. The Arena features soft surfaces, climbing structures, and versatile equipment that encourages both individual and team activities.",
+      "The Arena este scena principală a învățării. Este arena procesului tău de învățare: locul în care faci ceva nou sau provocator. Deși învățarea se întâmplă constant și în cele mai obișnuite momente, nu la asta ne referim prin Arenă. În Arenă învățarea se întâmplă pentru că faci ceva dificil și provocator! Este vorba de partea concreta de acțiune din procesul tău de învățare.",
     image: arena,
-    link: "/playground/arena",
+    link: "/coming-soon",
     color: "customWhite",
   },
   {
     id: 2,
     name: "The Fireplace",
     description:
-      "A cozy gathering spot where storytelling, discussion, and reflection happen. This intimate space features comfortable seating arranged in a circle, creating the perfect environment for sharing ideas, listening to stories, and building community.",
+      "The Fireplace este punctul din procesul de învățare în care reflectezi, cercetezi sau te odihnești, astfel încât să te poți întoarce la The Arena (practică) cu idei noi despre cum să-ți îmbunătățești și să-ți reîmprospătezi energia.",
     image: fireplace,
-    link: "/playground/fireplace",
+    link: "/coming-soon",
     color: "customOrange",
   },
   {
     id: 3,
     name: "The Roots",
     description:
-      "Our nature-based learning area where children connect with the natural world. The Roots features a garden, water play stations, and natural materials that invite exploration, observation, and hands-on discovery of environmental concepts.",
+      "The Roots este locul în care îți dai seama cum să-ți alimentezi cu energie procesul de învățare atunci când simți că nu ai energie, încredere sau curaj pentru următorul pas.",
     image: roots,
-    link: "/playground/roots",
+    link: "/coming-soon",
     color: "customWhite",
   },
   {
     id: 4,
     name: "The Tower",
     description:
-      "A vertical adventure space that challenges children to reach new heights—both literally and figuratively. The Tower combines climbing elements with observation platforms, offering new perspectives and encouraging children to overcome challenges.",
+      "The Tower este spațiul în care îți stabilești intențiile, obiectivele de învățare și unde te întorci atunci când trebuie să obții claritate și o privire de ansamblu asupra procesului de învățare.",
     image: tower,
-    link: "/playground/tower",
+    link: "/coming-soon",
     color: "customOrange",
   },
 ]

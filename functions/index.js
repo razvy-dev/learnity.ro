@@ -1,19 +1,137 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+import { defineSecret } from 'firebase-functions/params';
+import { onCall } from 'firebase-functions/v2/https';
+import { initializeApp, applicationDefault } from 'firebase-admin/app';
+import { getFirestore, FieldValue } from 'firebase-admin/firestore';
+import Stripe from 'stripe';
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+// Initialize Firebase Admin
+initializeApp({ credential: applicationDefault() });
+const db = getFirestore();
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
+// Stripe secret from Firebase environment
+const stripeSecret = defineSecret("STRIPE_SECRET_KEY");
+
+// Callable function
+// export const createCheckoutSession = onCall({ secrets: [stripeSecret] }, async (request) => {
+//   const { name, email, phone, school, grade, attendanceDays, reason, referralSource } = request.data;
+
+//   if (!name || !email || !phone || !school || !grade || !attendanceDays) {
+//     throw new Error("Missing required fields");
+//   }
+
+//   // Price logic based on attendanceDays
+//   let priceInRon = 0;
+//   if (attendanceDays === "both") {
+//     priceInRon = 50;
+//   } else if (attendanceDays === "first" || attendanceDays === "second") {
+//     priceInRon = 35;
+//   } else {
+//     throw new Error("Invalid attendanceDays value");
+//   }
+
+//   const priceInBani = priceInRon * 100; // Convert RON to bani (Stripe uses smallest unit)
+
+//   try {
+//     // Save submission to Firestore
+//     await db.collection("wtf").add({
+//       name,
+//       email,
+//       phone,
+//       school,
+//       grade,
+//       attendanceDays,
+//       reason,
+//       referralSource,
+//       createdAt: FieldValue.serverTimestamp(),
+//     });
+
+//     // Create Stripe checkout session
+//     const stripe = new Stripe(stripeSecret.value(), {
+//       apiVersion: "2023-10-16",
+//     });
+
+//     const session = await stripe.checkout.sessions.create({
+//       payment_method_types: ["card"],
+//       mode: "payment",
+//       line_items: [
+//         {
+//           price_data: {
+//             currency: "ron",
+//             unit_amount: priceInBani,
+//             product_data: {
+//               name: `Event Pass (${attendanceDays})`,
+//               description: "Participation fee",
+//             },
+//           },
+//           quantity: 1,
+//         },
+//       ],
+//       customer_email: email,
+//       success_url: "http://localhost:5173/thank-you", // Replace with your deployed site
+//       cancel_url: "http://localhost:5173/xyz",
+//     });
+
+//     return { url: session.url };
+//   } catch (error) {
+//     console.error("Stripe checkout error:", error.message);
+//     throw new Error("Unable to create Stripe session");
+//   }
 // });
+
+export const createCheckoutSession = onCall({ secrets: [stripeSecret] }, async (request) => {
+  const stripe = new Stripe(stripeSecret.value(), {
+    apiVersion: "2023-10-16",
+  });
+
+  const { name, email, attendanceDays } = request.data;
+
+  console.log("Received data:", { name, email, attendanceDays });
+
+  if (!name || !email || !attendanceDays) {
+    console.error("Missing required fields");
+    throw new functions.https.HttpsError('invalid-argument', 'Missing required fields');
+  }
+
+  let amount = 0;
+  if (attendanceDays === "first" || attendanceDays === "second") {
+    amount = 3500;
+  } else if (attendanceDays === "both") {
+    amount = 5000;
+  } else {
+    console.error("Invalid attendanceDays value:", attendanceDays);
+    throw new functions.https.HttpsError('invalid-argument', 'Invalid attendanceDays value');
+  }
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      mode: 'payment',
+      currency: 'ron',
+      line_items: [
+        {
+          price_data: {
+            currency: 'ron',
+            product_data: {
+              name: `Event Attendance - ${attendanceDays}`,
+            },
+            unit_amount: amount,
+          },
+          quantity: 1,
+        },
+      ],
+      customer_email: email,
+      success_url: "http://localhost:5173/thank-you", // Replace with your deployed site
+      cancel_url: "http://localhost:5173/xyz",
+    });
+
+    console.log("Created session:", session.id);
+    return { url: session.url };
+  } catch (error) {
+    console.error("Stripe error:", error);
+    throw new functions.https.HttpsError('internal', error.message);
+  }
+});
+
 
 import { onRequest } from 'firebase-functions/v2/https';
 import nodemailer from 'nodemailer';

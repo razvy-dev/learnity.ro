@@ -9,6 +9,7 @@ import p3 from './assets/3.jpeg';
 import p5 from './assets/5.jpeg';
 import p6 from './assets/6.jpeg';
 import p7 from './assets/7.jpeg';
+import WTForm from "./WTForm"
 
 // invitați
 
@@ -24,7 +25,7 @@ import slivia from './assets/silvia-schmidt.jpg';
 import stefaniaMihalache from './assets/stefania-mihalache.jpg';
 import traianBrumă from './assets/traian-bruma.jpg';
 import mihaiRadu from './assets/mihai-radu.jpg';
-import { image } from "framer-motion/client"
+import vladBalosin from './assets/vlad-balosin.jpeg';
 
 
 const WhatTheFuture = () => {
@@ -138,7 +139,7 @@ const WhatTheFuture = () => {
   ]
 
   const speakers = [
-    { name: "Vlad Baloșin", role: "Arhitect", color: "bg-customBlue" },
+    { name: "Vlad Baloșin", role: "Arhitect", color: "bg-customBlue", image: vladBalosin },
     { name: "Alexandra Stamate", role: "Designer de interior", color: "bg-customOrange", image: alexandraStamate },
     { name: "Mihai Radu", role: "Jurnalist și scriitor", color: "bg-customBlue", image: mihaiRadu },
     { name: "Marlena Pavel", role: "Ofițer de poliție", color: "bg-customOrange", image: MarlenaPavel },
@@ -1099,6 +1100,7 @@ const WhatTheFuture = () => {
           <div className="absolute bottom-0 left-3/4 w-16 h-16 bg-customLightBlue/10 rounded-full transform translate-y-1/2"></div>
         </div>
       </motion.section>
+      <WTForm />
     </div>
   )
 }

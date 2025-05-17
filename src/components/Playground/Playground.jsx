@@ -1,8 +1,9 @@
-"use client"
-
 import { useInView } from "react-intersection-observer"
 import { Link } from "react-router-dom"
 import { ArrowRight, Sparkles, Puzzle, Rocket, Star } from "lucide-react"
+import pg1 from './assets/playground1.jpg';
+import pg2 from './assets/playground2.jpg';
+
 
 const PlaygroundHero = () => {
   const { ref, inView } = useInView({
@@ -65,15 +66,15 @@ const PlaygroundHero = () => {
                 to="/playground/register"
                 className="group inline-flex items-center bg-customBlue hover:bg-customOrange text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg transform hover:scale-105"
               >
-                Înscrie-te la Activități
+                Vezi mai mult
                 <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
 
               <Link
-                to="/playground/tour"
+                to="/contact"
                 className="group inline-flex items-center bg-white border-2 border-customBlue text-customBlue hover:bg-customLightBlue font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg transform hover:scale-105"
               >
-                Tur Virtual
+                Înscrie-te în Playground
                 <Sparkles className="ml-2 w-5 h-5" />
               </Link>
             </div>
@@ -86,9 +87,9 @@ const PlaygroundHero = () => {
               <div className="bg-white p-4 rounded-2xl shadow-xl transform rotate-2 transition-transform hover:rotate-0 duration-500">
                 <div className="rounded-xl overflow-hidden">
                   <img
-                    src="/placeholder.svg?height=600&width=800"
+                    src={pg2}
                     alt="Copii explorând și învățând în playground-ul Learnity"
-                    className="w-full h-auto"
+                    className=""
                   />
                 </div>
               </div>
@@ -105,24 +106,13 @@ const PlaygroundHero = () => {
               {/* Small floating image */}
               <div className="absolute -bottom-10 -left-10 w-1/3 bg-white p-2 rounded-xl shadow-lg transform -rotate-6 z-10">
                 <img
-                  src="/placeholder.svg?height=200&width=200"
+                  src={pg1}
+                  height={200}
+                  width={200}
                   alt="Activitate educativă în playground"
                   className="w-full h-auto rounded-lg"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${inView ? "animate-fade-in" : "opacity-0"}`}
-          style={{ transitionDelay: "0.7s" }}
-        >
-          <div className="flex flex-col items-center">
-            <span className="text-customBlack text-sm mb-2">Descoperă mai mult</span>
-            <div className="w-6 h-10 border-2 border-customBlack rounded-full flex justify-center p-1">
-              <div className="w-2 h-2 bg-customBlack rounded-full animate-scroll-down"></div>
             </div>
           </div>
         </div>

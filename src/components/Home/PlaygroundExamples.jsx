@@ -12,8 +12,8 @@ const playgroundWorkshops = [
     description:
       "Children discover the wonders of nature through guided exploration, scavenger hunts, and hands-on activities in our outdoor learning spaces. Perfect for curious minds who love the outdoors!",
     image: pg1,
-    date: "May 12, 2023",
-    link: "/playground/nature-explorers",
+    date: "20 decembrie, 2024",
+    link: "/playground",
   },
   {
     id: 2,
@@ -21,8 +21,8 @@ const playgroundWorkshops = [
     description:
       "🎃 La “Halloweenity”, anuala petrecere de Halloween, ne-am costumat, am sculptat dovleci, ne-am jucat diverse joculețe, am avut un murder mystery, iar la final am avut premii și snack-uri tematice. 😋",
     image: pg2,
-    date: "July 22, 2023",
-    link: "/playground/music-jam",
+    date: "18 octombrie, 2024",
+    link: "/playground",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const playgroundWorkshops = [
       "La Playground Day reflectăm asupra obiectivelor noastre de învățare și stabilim ce alte experiențe de învățare ne dorim în continuare 🥰. 👉 În cadrul acestei sesiuni learnitaşii şi-au stabilit obiectivele de învațare pe care vor sa se concentreze şi le-au tranformat in “Badges” - reprezentări grafice, reprezentând obiectivul nostru de învățare.",
     image: pg3,
     date: "11 Decembrie, 2024",
-    link: "/playground/engineering",
+    link: "/playground",
   },
 ]
 
@@ -111,7 +111,7 @@ const PlaygroundExamples = () => {
                     to={workshop.link}
                     className="group flex items-center justify-center bg-customOrange hover:bg-customBlue text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 mt-auto"
                   >
-                    Join the Fun!
+                    Vezi mai multe
                     <ArrowRight
                       size={18}
                       className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -132,7 +132,7 @@ const PlaygroundExamples = () => {
             to="/playground/workshops"
             className="inline-flex items-center bg-white border-2 border-customOrange hover:bg-customOrange text-customOrange hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md"
           >
-            Explore All Playground Activities
+            Vezi mai mult din Playground
             <ArrowRight className="ml-2" size={20} />
           </Link>
         </div>

@@ -112,15 +112,15 @@ const GuidedHero = () => {
                 to="/guided/approach"
                 className="group inline-flex items-center bg-white hover:bg-customOrange hover:text-white text-customBlue font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg transform hover:scale-105"
               >
-                Descoperă Abordarea Noastră
+                Descoperă Guided Learning-ul
                 <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
 
               <Link
-                to="/guided/programs"
+                to="/despre-noi"
                 className="group inline-flex items-center bg-customOrange text-white hover:bg-white hover:text-customOrange font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg transform hover:scale-105"
               >
-                Programe Educaționale
+                Cursurile acestui an
                 <BookOpen className="ml-2 w-5 h-5" />
               </Link>
             </div>

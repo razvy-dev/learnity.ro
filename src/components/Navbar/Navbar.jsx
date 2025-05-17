@@ -86,7 +86,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="absolute inset-0 overflow-hidden bg-customBlack">
             {/* Menu content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-[calc(100%-5rem)] p-6 transition-opacity duration-500">
+            <div className="relative z-10 flex flex-col items-center justify-center h-[100dvh] p-6 transition-opacity duration-500">
               <div className="w-full max-w-md">
                 {menuLinks.map((link, index) => (
                   <Link

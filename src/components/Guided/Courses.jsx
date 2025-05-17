@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { useInView } from "react-intersection-observer"
 import { Calendar, User, BookOpen, ChevronDown, ChevronUp } from "lucide-react"
+import filosofie from './assets/filosofie.jpg';
+import creative from './assets/creative-thinking.jpg';
+import pastila from './assets/pastila-de-arta.jpg';
+import sdj from './assets/sdj.jpeg';
 
 // Sample data for courses
 const courses = [
@@ -10,8 +14,8 @@ const courses = [
     description:
       "Dacă politica ultimelor luni din România ne-a arătat ceva, este că democraţia nu ne este dată de-a gata şi că, odată obţinută,  ea nu este dincolo de orice pericol. ⚖️ Spectrul totalitarismului ne bântuie în continuare, iar libertatea noastră trebuie apărată. Pentru asta, avem nevoie să înţelegem care sunt sursele şi formele de manifestare ale acţiunilor politice antidemocratice, de ce diversele forme de fascism şi comunism exercită în continuare o putere de convingere asupra oamenilor şi, în final, faptul că statul de drept este destul de bun chiar şi când e foarte prost. Despre toate acestea discutam la cursul de filosofie politică alături de Petrișor Ivan .✨",
     teacher: "Petrișor Ivan",
-    image: "/placeholder.svg?height=400&width=600",
-    subjects: ["Creative Writing", "Character Development", "Visual Storytelling", "Performance Skills"],
+    image: filosofie,
+    subjects: ["Marxismul", "Fascismul", "Nietzsche", "Sisteme de guvernare"],
     dateInterval: "20 ianuarie - 3 martie, 2025",
   },
   {
@@ -20,7 +24,7 @@ const courses = [
     description:
       "Să fii creativ înseamnă doar să ştii să pictezi? Ce este creativitatea? Care e diferenta dintre gândirea convergentă și cea divergentă şi cum poți să depașeşti bariere sau blocaje în creativitate? Cum arată un om creativ şi oare sunt şi eu unul dintre ei? Răspunsul la aceste întrebări și multe altele le afli la cursul “Creative Thinking” susținut de Cosmin Muscălescu, Head of Creative & Communications la Promocrat (agenție de publicitate).",
     teacher: "Cosmin Mușcălescu",
-    image: "/placeholder.svg?height=400&width=600",
+    image: creative,
     subjects: ["Brainstorming", "Team working", "Hackathon", "Pitching"],
     dateInterval: "23 ianuarie - 13 martie, 2025",
   },
@@ -30,8 +34,8 @@ const courses = [
     description:
       "Arta este pentru toată lumea, oricine poate să se exprime prin intermediul său. Nivelul de skill-uri sau cunoștințe nu contează, ci doar dorința și curajul de a-ți exterioriza trăirile și ideile prin această modalitate. Vrem să creăm un spațiu în cadrul căruia putem cu toții să ne regăsim și să comunicăm cine suntem cu ajutorul mijloacelor plastice. În cadrul acestui curs avem 6 ședințe în care exploram diferite tipuri de artă - pictura, modelajul, fotografia, gravura, fiecare având profesori separați, specializați pe fiecare domeniu în parte.",
     teacher: "Andra Achim, Ana Guțǎ, Emma Blaga, Costin Duțu",
-    image: "/placeholder.svg?height=400&width=600",
-    subjects: ["Digital Drawing", "Color Theory", "Character Animation", "Storyboarding"],
+    image: pastila,
+    subjects: ["Fotografie", "Gravură", "Pictură", "Sculptură"],
     dateInterval: "11 noiembrie - 16 decembrie, 2024",
   },
   {
@@ -40,7 +44,7 @@ const courses = [
     description:
       "Un parcurs în 7 întâlniri săptămânale, unde vei explora cine ești, ce te motivează și cum poți deveni o versiune mai încrezătoare și mai autentică a ta. Ce vei descoperi pe parcurs: \n 1. Gândirea, Cogniții și Bias-uri – Cum ne influențează gândurile deciziile și felul în care vedem lumea.  \n 2. Nevoi și Motivații– Ce te impulsionează cu adevărat și cum poți învăța să-ți recunoști și să-ți respecți nevoile. \n 3. Emoții și Inteligența Emoțională– Cum să înțelegi ce simți și să gestionezi emoțiile într-un mod sănătos. \n 4. Stiluri de Decizie – Cum să iei decizii mai clare și mai potrivite pentru tine. \n 5. Imagine de sine și Încredere în sine – Cum să-ți construiești o relație mai bună cu tine și să crezi în valoarea ta. \n 6. Idealuri și Valori– Ce contează cu adevărat pentru tine și cum să faci alegeri care reflectă asta. \n Acest grup este mai mult decât o serie de întâlniri – este o oportunitate să înveți mai multe despre tine și despre ce te face să te simți bine în pielea ta.",
     teacher: "Aisha Patel",
-    image: "/placeholder.svg?height=400&width=600",
+    image: sdj,
     subjects: ["Ecosystem Studies", "Sustainable Gardening", "Wildlife Observation", "Conservation Projects"],
     dateInterval: "14 martie - 18 aprilie, 2025",
   },
@@ -166,12 +170,12 @@ const GuidedCourses = () => {
                 {/* Image side */}
                 <div className={`mt-6 md:mt-0 ${index % 2 === 0 ? "" : ""}`}>
                   <div
-                    className={`rounded-xl overflow-hidden shadow-lg ${index % 2 === 0 ? "transform md:rotate-2" : "transform md:-rotate-2"}`}
+                    className={`w-1/2 h-auto rounded-xl overflow-hidden shadow-lg ${index % 2 === 0 ? "transform md:rotate-2" : "transform md:-rotate-2"}`}
                   >
                     <img
                       src={course.image || "/placeholder.svg"}
                       alt={course.name}
-                      className="w-full h-auto object-cover"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -189,7 +193,7 @@ const GuidedCourses = () => {
             href="/courses"
             className="inline-flex items-center bg-customBlue hover:bg-customOrange text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md"
           >
-            Browse All Courses
+            Vezi cursurile acestui an
           </a>
         </div>
       </div>

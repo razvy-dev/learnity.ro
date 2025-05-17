@@ -5,6 +5,7 @@ import alex from './assets/alex.jpeg';
 import smaranda from './assets/smaranda.jpeg';
 import prof2 from './assets/prof2.jpg';
 import prof3 from './assets/prof3.jpg';
+import { Link } from "react-router-dom";
 
 // Sample data for teachers
 const teachers = [
@@ -81,9 +82,7 @@ const TeachersShowcase = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            Our passionate educators bring learning to life with creativity, expertise, and a deep understanding of how
-            children learn best. Each teacher contributes their unique talents to create an engaging, supportive
-            environment.
+            Profesorii noștri pasionați aduc învățarea la viață cu creativitate, expertiză și o înțelegere profundă a modului în care copiii învață cel mai bine. Fiecare profesor contribuie cu talentele sale unice pentru a crea un mediu captivant și de susținere.
           </p>
         </div>
 
@@ -141,12 +140,12 @@ const TeachersShowcase = () => {
           className={`text-center mt-12 ${inView ? "animate-fade-in" : "opacity-0"}`}
           style={{ transitionDelay: "0.8s" }}
         >
-          <a
-            href="/teachers"
+          <Link
+            to="/despre-noi"
             className="inline-flex items-center bg-customBlue hover:bg-customOrange text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md"
           >
-            Meet All Our Teachers
-          </a>
+            Profesorii acestui an
+          </Link>
         </div>
       </div>
     </section>

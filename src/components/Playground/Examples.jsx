@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useInView } from "react-intersection-observer"
-import { Link } from "react-router-dom"
 import { Calendar, ArrowRight } from "lucide-react"
 import jam from './assets/jam.jpg';
 import photo from './assets/photo.jpg';
@@ -9,6 +8,8 @@ import halloween from './assets/pg2.jpg';
 import traditii from './assets/traditii.jpeg';
 import coping from './assets/coping.jpeg';
 import cinema from './assets/cinema.jpeg';
+import craiova from './assets/pg1.jpg';
+import treasure_hunt from './assets/trasure_hunt.jpeg';
 
 // Sample data for the three categories
 const experienceCategories = [
@@ -20,28 +21,25 @@ const experienceCategories = [
         id: 1,
         title: "Coping Mechanisms",
         description:
-          "Children explore the art of storytelling through creative writing, illustration, and performance in this immersive workshop.",
+          "La workshopul despre coping mechanisms, participanții au vorbit deschis despre cum fac față emoțiilor puternice, stresului sau situațiilor dificile din viața de zi cu zi. Prin exemple concrete, jocuri și discuții relaxate, au descoperit metode simple și sănătoase de a-și recăpăta echilibrul atunci când lucrurile devin copleșitoare. A fost un spațiu sigur, cald și plin de înțelegere, în care fiecare a plecat cu idei noi și cu senzația că nu e singur în ceea ce simte.",
         image: coping,
         date: "15 Iunie 2023",
-        link: "/playground/workshops/storytelling",
       },
       {
         id: 2,
         title: "Tradiții libaneze",
         description:
-          "Young scientists conduct exciting experiments to discover fundamental scientific principles through hands-on activities.",
+          "Alături de Georges am descoperit o parte din cultura libaneză, direct de la sursă. Am aflat despre tradițiile locale, locurile de vizitat și stilul de viață din Liban, am ascultat muzică tradițională, am învățat primele litere din alfabetul arab și, la final, ne-am bucurat de falafel și humus gătite chiar de el. Un workshop care ne-a adus mai aproape de o cultură diferită, prin povești, gusturi și sunete.",
         image: traditii,
         date: "22 Iulie 2023",
-        link: "/playground/workshops/science",
       },
       {
         id: 3,
         title: "Arta cinematografiei",
         description:
-          "Workshopul a abordat relația dintre film și psihologie, concentrându-se pe impactul emoțional și social al filmelor. S-au analizat filme psihologice și s-a discutat despre modul în care emoțiile sunt transmise prin limbaj vizual, auditiv și tehnici cinematografice. De asemenea, a fost inclus un scurt parcurs prin istoria cinematografiei și influența acesteia asupra societății.",
+          "La workshopul despre coping mechanisms, am vorbit deschis despre cum fac față emoțiilor puternice, stresului sau situațiilor dificile din viața de zi cu zi. Prin exemple concrete, jocuri și discuții relaxate, am descoperit metode simple și sănătoase de a ne recăpăta echilibrul atunci când lucrurile devin copleșitoare. A fost un spațiu sigur, cald și plin de înțelegere, din care fiecare a plecat cu idei noi și tot felul de informații utile.",
         image: cinema,
-        date: "5 August 2023",
-        link: "/playground/workshops/digital-art",
+        date: "5 August 2023"
       },
     ],
   },
@@ -56,7 +54,6 @@ const experienceCategories = [
           "Îți doreşti să citeşti cât mai mult, dar simți că nu ai timp sau că oricât ai încerca stagnezi la un moment dat? 📚✨📖🔖 Dacă iubești lectura și vrei să împărtășești descoperirile tale literare cu alții sau pur şi simplu îți doreşti să începi de undeva, dar nu ştii de unde, te aşteptăm cu mare drag!💗 Vino să îți găsești inspirația alături de noi, într-o atmosferă cât mai cozy și prietenoasă! 📕❤️",
         image: bookClub,
         date: "În fiecare Marți",
-        link: "/playground/groups/eco",
       },
       {
         id: 2,
@@ -65,7 +62,6 @@ const experienceCategories = [
           "Nu este nevoie sa fii vreun guitar god🎸, sa stii teorie muzicala🎼 sau sa poti atinge pana si cele mai inalte note🎤, trebuie doar sa ai un minim de skilluri pe instrumentul tau in asa fel incat sa putem canta impreuna, dar cel mai important este sa ai dorinta de a te lasa purtat de muzica si de a te armoniza cu alti learnitasi ce iti impartasesc pasiunea!🎹",
         image: jam,
         date: "În fiecare Joi",
-        link: "/playground/groups/entrepreneurs",
       },
       {
         id: 3,
@@ -74,7 +70,6 @@ const experienceCategories = [
           "Grupul autonom de fotografie este un grup în care învățăm cum să facem poze cât mai calitative, ne ajutăm reciproc să cultivăm această pasiune comună pentru fotografie și petrecem timp de calitate împreună, apropiindu-ne unii de alții.",
         image: photo,
         date: "În fiecare Vineri",
-        link: "/playground/groups/book-club",
       },
     ],
   },
@@ -89,25 +84,22 @@ const experienceCategories = [
           "🎃 La “Halloweenity”, anuala petrecere de Halloween, ne-am costumat, am sculptat dovleci, ne-am jucat diverse joculețe, am avut un murder mystery, iar la final am avut premii și snack-uri tematice. 😋",
         image: halloween,
         date: "10 Iulie 2023",
-        link: "/playground/events/summer-festival",
       },
       {
         id: 2,
         title: "Excursie Foto",
         description:
-          "A collaborative event where parents and children work together to design and create innovative solutions to everyday challenges.",
-        image: "/placeholder.svg?height=300&width=500",
+          "Duminica trecută ne-am urcat în tren și am plecat într-o excursie de o zi de neuitat spre unul dintre cele mai spectaculoase târguri de Crăciun din România - 🚉🏔️ Târgul de Crăciun din Craiova. 🎡 Această excursie a fost organizată de Grupul autonom de Fotografie, coordonat de Alex 💖 . Am explorat orașul, ne-am oprit să mâncăm și am ajuns, în sfârșit, la târg.🎅🏻 De aici ne-am bucurat cu toții de spiritul Crăciunului, fie cu un kürtos kalac, o ciocolată caldă sau o pereche de patine în picioare.",
+        image: craiova,
         date: "18 August 2023",
-        link: "/playground/events/make-a-thon",
       },
       {
         id: 3,
         title: "Treasure Hunt",
         description:
           "Young scientists present their experiments and discoveries to the community in this celebration of curiosity and innovation.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: treasure_hunt,
         date: "25 Septembrie 2023",
-        link: "/playground/events/science-fair",
       },
     ],
   },
@@ -203,35 +195,9 @@ const PlaygroundWorkshops = () => {
                 <h3 className="text-xl font-bold text-customBlack mb-3">{experience.title}</h3>
 
                 <p className="text-customBlack mb-6 flex-grow">{experience.description}</p>
-
-                {/* CTA link */}
-                <Link
-                  to={experience.link}
-                  className="group inline-flex items-center text-customBlue hover:text-customOrange transition-colors duration-300"
-                >
-                  <span className="font-bold">Learn More</span>
-                  <ArrowRight
-                    size={18}
-                    className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
-                  />
-                </Link>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* View all link */}
-        <div
-          className={`text-center mt-12 ${inView ? "animate-fade-in" : "opacity-0"}`}
-          style={{ transitionDelay: "0.7s" }}
-        >
-          <Link
-            to={`/playground/${activeCategory}`}
-            className="inline-flex items-center bg-customOrange hover:bg-customBlue text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md"
-          >
-            View All {experienceCategories.find((cat) => cat.id === activeCategory)?.name}
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
         </div>
       </div>
     </section>

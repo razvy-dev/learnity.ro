@@ -3,6 +3,8 @@ import { useInView } from "react-intersection-observer"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import sanzi from './assets/sanzi.jpeg';
 import razvan from './assets/razvan.jpg';
+import mama_lui_kit from './assets/mama_lui_kit.jpeg';
+import karla from './assets/karla.jpeg';
 
 const testimonials = [
     {
@@ -16,7 +18,7 @@ const testimonials = [
       id: 2,
       name: "Karla Ezaru",
       role: "Learnitaș",
-      image: razvan,
+      image: karla,
       text: "Imaginează-ți acel loc în care ai libertatea să găsești și să fii cea mai autentică versiune a ta, unde înveți cum să înveți și te cunoști pe tine însuți, unde greșelile nu sunt eșecuri, ci pași înainte. Acel loc în care cunoști oameni care te inspiră, te susțin, cu care și de la care înveți atâtea lucruri. Acel loc este Learnity🤍",
     },
     {
@@ -28,10 +30,10 @@ const testimonials = [
     },
     {
       id: 4,
-      name: "David Rodriguez",
-      role: "Community Partner",
-      image: "/placeholder.svg?height=100&width=100",
-      text: "Our organization has collaborated with Learnity on several projects. Their students bring incredible creativity and fresh perspectives to real-world challenges.",
+      name: "Mihaela Danilov",
+      role: "Mama unui Alumni Learnity",
+      image: mama_lui_kit,
+      text: "Learnity a fost revelația de care aveau nevoie copiii mei: au descoperit bucuria de a învăța, curajul de a fi vulnerabili și puterea unei comunități care îi ascultă cu adevărat. A fost o transformare reală, pentru ei și pentru mine.",
     },
   ]
 

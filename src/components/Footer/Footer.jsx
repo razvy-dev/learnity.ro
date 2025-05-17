@@ -89,17 +89,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="hover:text-customOrange transition-colors duration-300 flex items-center">
-                  <ArrowRight size={14} className="mr-2" /> Home
+                  <ArrowRight size={14} className="mr-2" /> Acasă
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-customOrange transition-colors duration-300 flex items-center">
-                  <ArrowRight size={14} className="mr-2" /> About Us
+                <Link to="/despre-noi" className="hover:text-customOrange transition-colors duration-300 flex items-center">
+                  <ArrowRight size={14} className="mr-2" /> Despre noi
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/programs"
+                  to="/guided-learning"
                   className="hover:text-customOrange transition-colors duration-300 flex items-center"
                 >
                   <ArrowRight size={14} className="mr-2" /> Guided Learning
@@ -107,15 +107,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/admissions"
+                  to="/playground"
                   className="hover:text-customOrange transition-colors duration-300 flex items-center"
                 >
                   <ArrowRight size={14} className="mr-2" /> Playground
                 </Link>
               </li>
               <li>
-                <Link to="/events" className="hover:text-customOrange transition-colors duration-300 flex items-center">
-                  <ArrowRight size={14} className="mr-2" /> Donate
+                <Link to="/donează" className="hover:text-customOrange transition-colors duration-300 flex items-center">
+                  <ArrowRight size={14} className="mr-2" /> Donează
                 </Link>
               </li>
             </ul>
@@ -129,26 +129,26 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-customWhite">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/blog" className="hover:text-customOrange transition-colors duration-300 flex items-center">
+                <Link to="/newsletter" className="hover:text-customOrange transition-colors duration-300 flex items-center">
                   <ArrowRight size={14} className="mr-2" /> Newsletter
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="hover:text-customOrange transition-colors duration-300 flex items-center">
-                  <ArrowRight size={14} className="mr-2" /> Log In & Sign Up
+                <Link to="/login" className="hover:text-customOrange transition-colors duration-300 flex items-center">
+                  <ArrowRight size={14} className="mr-2" /> Log In
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/parent-resources"
+                  to="/signup"
                   className="hover:text-customOrange transition-colors duration-300 flex items-center"
                 >
-                  <ArrowRight size={14} className="mr-2" /> Account
+                  <ArrowRight size={14} className="mr-2" /> Sign Up
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/student-resources"
+                  to="/upcoming-events"
                   className="hover:text-customOrange transition-colors duration-300 flex items-center"
                 >
                   <ArrowRight size={14} className="mr-2" /> Upcoming Events
@@ -156,10 +156,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/community"
+                  to="/contact"
                   className="hover:text-customOrange transition-colors duration-300 flex items-center"
                 >
-                  <ArrowRight size={14} className="mr-2" /> Documentation
+                  <ArrowRight size={14} className="mr-2" /> Contact
                 </Link>
               </li>
             </ul>
@@ -220,21 +220,6 @@ const Footer = () => {
           <p className="text-sm text-customWhite mb-4 md:mb-0">
             © {new Date().getFullYear()} Learnity. All rights reserved.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-customWhite">
-            <Link to="/privacy" className="hover:text-customOrange transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-customOrange transition-colors duration-300">
-              Terms of Service
-            </Link>
-            <Link to="/accessibility" className="hover:text-customOrange transition-colors duration-300">
-              Accessibility
-            </Link>
-            <Link to="/sitemap" className="hover:text-customOrange transition-colors duration-300">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

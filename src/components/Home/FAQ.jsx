@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { useInView } from "react-intersection-observer"
 import { ChevronDown, ChevronUp, Search, HelpCircle, School, Calendar, Users, BookOpen, Sparkles } from "lucide-react"
@@ -304,7 +302,7 @@ const FAQSection = () => {
                 Contactează-ne
               </Link>
               <a
-                href="/visit"
+                href="mailto:contact.learnity@gmail.com"
                 className="inline-flex items-center bg-white border-2 border-customBlue text-customBlue hover:bg-customLightBlue font-bold py-3 px-6 rounded-xl transition-all duration-300"
               >
                 Programează o vizită
