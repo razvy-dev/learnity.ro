@@ -12,7 +12,7 @@ const testimonials = [
       name: "Sânziana Tudose",
       role: "Learnity Alumni",
       image: sanzi,
-      text: "Learnity mi-a oferit o noua perspectiva legata de ce e o comunitate si ce e invatarea. Pentru mine, a fost un prim pas spre a deveni o persoana care are initiativa si care iubeste colaborarea cu ceilalti.",
+      text: "Learnity mi-a oferit o nouă perspectivă legată de ce e o comunitate și ce e învățarea. Pentru mine, a fost un prim pas spre a deveni o persoană care are inițiativa și care iubește colaborarea cu ceilalți.",
     },
     {
       id: 2,

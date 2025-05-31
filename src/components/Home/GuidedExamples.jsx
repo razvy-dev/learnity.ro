@@ -69,7 +69,7 @@ const GuidedExamples = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            Workshop-urile guided: Pastile de invatare sustinute de profesionisti din diferite domenii. Fiecare aterlier este practic si creat in functie de interesele adolescentilor
+            Workshop-urile ghidate: Pastile de învățare susținute de profesioniști din diferite domenii. Fiecare atelier este practic și creat în funcție de interesele adolescenților.
           </p>
         </div>
 

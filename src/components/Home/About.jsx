@@ -139,7 +139,7 @@ const AboutUsSection = () => {
 
                 <div className="space-y-4 text-lg text-customBlack mb-8">
                   <p>
-                    Misiunea noastră este să ghidăm fiecare adolescent să devină un adult care se cunoaște pe el însuși, își urmează pasiunile și contribuie la o lume mai bună. Credem că orice schimbare începe din interior – odată ce se descoperă pe sine, poate apoi să creeze un impact real și în jurul lui.
+                    Misiunea noastră este să ghidăm fiecare adolescent să devină un adult care se cunoaște pe el însuși, își urmează pasiunile și contribuie la o lume mai bună. Credem că orice schimbare începe din interior – odată ce se descoperă pe sine, poate apoi să creeze un impact real în jurul lui.
                   </p>
                   <p>
                   Pentru asta, le oferim un spațiu sigur în care să se exploreze fără teama de a fi judecați, să își dezvolte gândirea critică și să capete încredere în cine sunt și în ce pot face.

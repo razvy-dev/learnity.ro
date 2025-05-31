@@ -54,14 +54,14 @@ export default function Navbar() {
     <>
       {/* Mobile Navigation (Bottom) - No circle animation */}
       <nav
-        className={`fixed rounded-t-3xl bottom-0 left-0 right-0 z-40 md:hidden bg-customBlack text-customWhite transition-all duration-300 ${isMenuOpen ? "h-screen" : "h-20"}`}
+        className={`fixed rounded-t-3xl bottom-0 left-0 right-0 z-40 md:hidden bg-customBlack text-customWhite transition-all duration-300 ${isMenuOpen ? "h-[100dvh]" : "h-20"}`}
       >
         {/* Mobile Nav Icons - Always visible */}
         <div className="flex justify-around items-center h-20 px-4 relative z-50">
-          <Link to="/" className="flex flex-col items-center">
+          <Link to="/" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="flex flex-col items-center">
             <Home className="w-10 h-10" />
           </Link>
-          <Link to="/upcoming-events" className="flex flex-col items-center">
+          <Link to="/upcoming-events" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="flex flex-col items-center">
             <Calendar className="w-10 h-10" />
           </Link>
           <button
@@ -74,10 +74,10 @@ export default function Navbar() {
               {isMenuOpen ? <X className="w-8 h-8 text-customBlack" /> : <Menu className="w-8 h-8 text-customBlack" />}
             </div>
           </button>
-          <Link to="/account" className="flex flex-col items-center">
+          <Link to="/account" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="flex flex-col items-center">
             <User className="w-10 h-10" />
           </Link>
-          <Link to="/newsletter" className="flex flex-col items-center">
+          <Link to="/newsletter" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="flex flex-col items-center">
             <Mail className="w-10 h-10" />
           </Link>
         </div>
@@ -86,7 +86,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="absolute inset-0 overflow-hidden bg-customBlack">
             {/* Menu content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-[100dvh] p-6 transition-opacity duration-500">
+            <div className="relative z-10 flex flex-col items-center justify-center h-[105vh] p-6 transition-opacity duration-500">
               <div className="w-full max-w-md">
                 {menuLinks.map((link, index) => (
                   <Link
@@ -113,17 +113,17 @@ export default function Navbar() {
           <div className="container mx-auto px-6 flex justify-between items-center">
             {/* Logo */}
             <div className="flex-1">
-              <Link to="/" className="flex items-center">
+              <Link to="/" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="flex items-center">
                 <img src={logo || "/placeholder.svg"} alt="logo" width={150} height={150} />
               </Link>
             </div>
 
             {/* Center Navigation */}
             <div className="flex-1 flex items-center justify-center space-x-10">
-              <Link to="/" className="text-customWhite hover:text-customOrange transition-colors">
+              <Link to="/" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="text-customWhite hover:text-customOrange transition-colors">
                 <Home className="w-10 h-10" />
               </Link>
-              <Link to="/upcoming-events" className="text-customWhite hover:text-customOrange transition-colors">
+              <Link to="/upcoming-events" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="text-customWhite hover:text-customOrange transition-colors">
                 <Calendar className="w-10 h-10" />
               </Link>
               <button
@@ -134,10 +134,10 @@ export default function Navbar() {
               >
                 {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
               </button>
-              <Link to="/account" className="text-customWhite hover:text-customOrange transition-colors">
+              <Link to="/account" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="text-customWhite hover:text-customOrange transition-colors">
                 <User className="w-10 h-10" />
               </Link>
-              <Link to="/newsletter" className="text-customWhite hover:text-customOrange transition-colors">
+              <Link to="/newsletter" onClick={() => { if (isMenuOpen) { toggleMenu() } }} className="text-customWhite hover:text-customOrange transition-colors">
                 <Mail className="w-10 h-10" />
               </Link>
             </div>

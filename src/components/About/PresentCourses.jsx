@@ -71,7 +71,7 @@ const courseModules = [
       },
       {
         id: 5,
-        name: "Brainsotrming: Hoții de subiecte",
+        name: 'Marketing: "Hoții de subiecte"',
         description:
           "Anul acesta, Learnity a colaborat cu Promocrat pentru a crea o experiență cât mai aplicată și fun pentru elevii pasionați de marketing. 🚀✨Ghidați de Cosmin Muscălescu, pe parcursul primului modul, learnitașii au avut ocazia să contribuie la gândirea și implementarea strategiei de promovare pentru filmul „Hoții de Subiecte”. 🎬🔎",
         teacher: "Cosmin Mușcălescu",
@@ -158,7 +158,7 @@ const courseModules = [
         name: "Build Up Camp",
         description:
           "Construim căsuțe 🛠️ și deconstruim concepții. Trei zile în mijlocul naturii 🌿, departe de agitația orașului, în care ne reconectăm la un alt ritm de viață, punem mâna pe unelte 🪚 și ne întrebăm ce fel de lume vrem să construim – în afara și înăuntrul nostru. ✨ Un bootcamp despre viață alternativă, comunitate, perspective noi și autenticitate. 🫂 Despre traineri: Traian Brumă (@traianbruma ) Traian este unul dintre mentorii noştri, fondatorul Universității Alternative și unul dintre pionierii educației alternative din România. A călătorit prin lume explorând comunități de învățare și astăzi, împreună cu prietenii săi, construiește propriul lor “sat”– un vis despre viață în ritm natural, educație și comunitate.🌿",
-        teacher: "Lisa Thompson",
+        teacher: "Traian Brumă",
         place: "Zona Vălenii de Munte",
         timeperiod: "20 - 22 iunie",
         image: bootcamp1,
@@ -168,7 +168,7 @@ const courseModules = [
         name: "Think Big Camp",
         description:
           "Ai o idee care merită să fie pusă în lume, dar nu știi de unde să începi?⚡️ Timp de 3 zile, ne distrăm, transformăm ideile în concepte reale, ne antrenăm gândirea strategică și creativă, și învățăm cum să lucrăm în echipă – cu scop, deadline și pitch. Iar asta nu e tot, proiectul câștigător va fi susținut de Learnity pentru a deveni realitate!❤️‍🔥🌟 Despre traineri: Sandra Muscălescu (@sandramuscalescu ) Sandra este designer grafic cu peste 10 ani de experiență, recunoscută pentru creativitatea ei remarcabilă și atenția la detalii. A lucrat în proiecte diverse – de la publicitate și platforme digitale, până la jocuri video și animație – și aduce în bootcamp o viziune artistică originală și o pasiune autentică pentru artă și design. Cu un simț fin al esteticii și o înțelegere solidă a principiilor de design, Sandra îi va inspira pe liceeni să creeze cu încredere și imaginație. Cosmin Muscălescu (@kosminach ) Cosmin e genul de om care nu doar că vede ideile înainte să prindă contur, dar le și pune pe roate cu un mix de curaj, umor și strategie. Îi place să dea sens lucrurilor complicate, să provoace gândirea convențională și să transforme “hmm...” în “a-ha!”. În bootcamp, vine cu mult chef de joacă serioasă: branding, storytelling și tot ce ține de comunicare cu personalitate. Spoiler: s-ar putea să-ți dea peste cap felul în care vezi creativitatea — în cel mai bun sens posibil.",
-        teacher: "Cosmin Mușcălescu",
+        teacher: "Cosmin Muscălescu",
         place: "Slănic, Prahova",
         timeperiod: "16 - 18 mai",
         image: bootcamp2,
@@ -178,7 +178,7 @@ const courseModules = [
         name: "Create Camp",
         description:
           "Trei zile la mare, departe de agitația orașului, în care ne dăm voie să simțim, să observăm și să spunem lucruri care contează – prin imagine, sunet și poveste. Explorăm, învățăm, ne exprimăm artistic și autentic. Fotografie 📷, video 🎥, sunet și perspective noi. Un bootcamp pentru adolescenții care vor să-și găsească vocea și să o transpună în artă. Despre traineri: Costin Dutu (@theusvrper ) Costin este artist vizual si muzician, foloseste experimentul ca si practica recurenta in lucrarile sale - de la performance art, sculptura, gravura si video, pana la sound art, muzica industrial, drone si harsh noise. Activeaza de 8 ani pe scena de arta romaneasca si internationala, in parcursul sau artistic sustinand performance-uri de sunet si participand la expozitii in galerii din Bucuresti, Timisoara si Shanghai. Incurajeaza practica artistica libera, sincera si asumata, situata in afara canoanelor artistice consacrate, notiunea de counter-culture si counter-movement jucand un rol vital in filosofia sa de viata. Emma Blaga (@earthbody__ ) Ema este artistă multi-medium, îmbină arta vizuală cu muzica experimentală. Lucrează cu land art, fotografie si tehnici de imprimare analog - contact printing, monotipie, gravură, şi sculptură. Performează folosindu-și atât vocea și instrumentele clasice precum pianul/instrumentele de percuție, cât și utilizând sintetizatoare, drum machines si instrumente electronice diy. Practica sa artistică gravitează in jurul temelor sociale și politice precum activismul pentru mediu și pentru drepturile omului și al animalelor, dar si primitivism, misticism si traiul in comunități alternative.",
-        teacher: "David Johnson",
+        teacher: "Emma Blaga, Costin Duțu",
         place: "Corbu, Constanța",
         timeperiod: "13 - 15 iunie",
         image: bootcamp3,

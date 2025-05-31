@@ -15,11 +15,17 @@ const WhatTheFuture = () => {
   // Event details
   const eventDetails = {
     title: "What The Future",
-    subtitle: "Explorează viitorul educației și tehnologiei",
-    description:
-      "What The Future este un eveniment adresat adolescenților în cadrul căruia povestim alături de invitați din diferite domenii de activitate. Organizăm diverse discuții, panel-uri și workshop-uri despre carieră, vocație și facultate, prin care dorim să oferim liceenilor o privire de ansamblu a opțiunilor pe care le au și a direcției în care vor să meargă.",
-    longDescription:
-      "Ca adolescent, mai devreme sau mai târziu, vine momentul acela în care întrebările despre viitor apar, iar răspunsurile se lasă așteptate. Uneori, întrebările acestea vin cu entuziasm, alteori cu anxietate. Noi suntem aici să le reamintim că au timp, că sunt bine fix unde sunt, că procesul fiecăruia este unic și că nu sunt într-o cursă. Cu toate acestea în minte, am creat acest eveniment menit să le vină în ajutor și să îi ghideze în această perioadă de explorare, pentru a găsi răspunsurile potrivite lor.",
+    subtitle: "Un eveniment despre carieră, vocație și viitor",
+    description: (
+      <>
+        What The Future este un <strong>eveniment</strong> adresat <strong>adolescenților</strong> în cadrul căruia povestim alături de invitați din diferite <strong>domenii de activitate</strong>. Organizăm diverse <strong>discuții</strong>, <strong>panel-uri</strong> și <strong>workshop-uri</strong> despre <strong>carieră</strong>, <strong>vocație</strong> și <strong>facultate</strong>, prin care dorim să oferim liceenilor o <strong>privire de ansamblu</strong> a opțiunilor pe care le au și a <strong>direcției</strong> în care vor să meargă.
+      </>
+    ),
+    longDescription: (
+      <>
+        Ca adolescent, mai devreme sau mai târziu, vine momentul acela în care <strong>întrebările despre viitor</strong> apar, iar răspunsurile se lasă așteptate. Uneori, întrebările acestea vin cu <strong>entuziasm</strong>, alteori cu <strong>anxietate</strong>. Noi suntem aici să le reamintim că <strong>au timp</strong>, că <strong>sunt bine fix unde sunt</strong>, că <strong>procesul fiecăruia este unic</strong> și că <strong>nu sunt într-o cursă</strong>. Cu toate acestea în minte, am creat acest <strong>eveniment</strong> menit să le vină în <strong>ajutor</strong> și să îi <strong>ghideze</strong> în această perioadă de <strong>explorare</strong>, pentru a găsi <strong>răspunsurile potrivite</strong> lor.
+      </>
+    ),
     place: "NOD Makerspace",
     date: "7 - 8 iunie 2025",
     time: "11:00 - 19:00",
@@ -28,15 +34,17 @@ const WhatTheFuture = () => {
       twoDays: "50 RON",
     },
     features: [
-      "12+ workshop-uri interactive",
-      "Speakeri internaționali",
+      "Speakeri din diverse domenii de interes",
+      "Workshop-uri și panel-uri despre carieră și vocație  ",
       "Networking cu profesioniști",
-      "Demonstrații de tehnologii educaționale",
+      "Discuții cu oameni faini care să te inspire",
       "Certificate de participare",
-      "Materiale educaționale exclusive",
+      "Răspunsul la anxietățile tale legate de viitor",
     ],
     images: [img1, img2],
   }
+  
+  
 
   // Handle image navigation
   const nextImage = () => {

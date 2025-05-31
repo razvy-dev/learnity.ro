@@ -81,16 +81,6 @@ const WTForm = () => {
         setIsSubmitting(false)
         setSubmitted(true)
         console.log("Form data:", formData)
-        // setFormData({
-        //   name: "",
-        //   email: "",
-        //   phone: "",
-        //   school: "",
-        //   grade: "",
-        //   attendanceDays: "",
-        //   reason: "",
-        //   referralSource: "",
-        // })
       }, 1500)
 
       e.preventDefault();
@@ -102,9 +92,9 @@ const WTForm = () => {
         console.log(formData)
 
         const result = await createCheckoutSession({
-          name: "razvan",
-          email: "razvan.andronachi@gmail.com",
-          attendanceDays: "both"
+          name: formData.name,
+          email: formData.email,
+          attendanceDays: formData.attendanceDays
       });
 
         const { url } = result.data;
@@ -140,44 +130,10 @@ const WTForm = () => {
 
   if (submitted) {
     return (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-xl p-8 shadow-lg max-w-3xl mx-auto relative overflow-hidden"
-        >
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-customBlue"></div>
-          <div className="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-customBlue/30 rounded-tl-lg"></div>
-          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-customOrange/30 rounded-br-lg"></div>
-  
-          <div className="text-center">
-            <div className="w-20 h-20 bg-customLightBlue rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-customBlue"
-              >
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <h2 className="text-3xl font-bold text-customBlack mb-4">Înregistrare completă!</h2>
-            <p className="text-lg text-customBlack/80 mb-6">
-              Mulțumim pentru înregistrare! Abia așteptăm să te vedem la WTFuture.
-            </p>
-            <p className="text-md text-customBlack/70">
-              Vei primi în curând un email cu detalii suplimentare despre eveniment.
-            </p>
-          </div>
-        </motion.div>
-      )
+      <div className="flex justify-center items-center py-20">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-customBlue"></div>
+                </div>
+    )
     }
   
     return (
@@ -185,7 +141,7 @@ const WTForm = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="bg-white rounded-xl p-8 md:p-10 shadow-lg max-w-3xl mx-auto relative overflow-hidden"
+        className="bg-white rounded-xl p-8 mb-20 md:p-10 shadow-lg max-w-3xl mx-auto relative overflow-hidden"
       >
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-customBlue to-customOrange"></div>

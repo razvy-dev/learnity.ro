@@ -61,7 +61,7 @@ const AboutUs = () => {
         animate="visible"
         variants={sectionVariants}
       >
-        <h2 className='text-5xl font-bold mb-8 font-bangers tracking-widest'>Reforma</h2>
+        <h2 className='text-5xl font-bold mb-8 font-bangers tracking-widest'>Learnity 2.0</h2>
         <div className='flex flex-col md:flex-row-reverse items-center justify-center gap-8 mb-8'>
           <motion.div 
             className='w-80 h-80 bg-[#F8A12E] rounded-lg overflow-hidden transform -rotate-3 shadow-lg'
@@ -71,9 +71,7 @@ const AboutUs = () => {
           </motion.div>
           <p className='text-xl text-center md:text-left max-w-lg font-arima'>
           Pentru că își dorea ca proiectul să continue într-o formă sau alta, însă nu coordonat de ea, Silvia a adunat câțiva dintre alumnii pe care îi considera cei mai potriviți pentru acest rol, care respirau valorile Learnity, pentru a le prezenta următoarea provocare: “Vrem să ne retragem din Learnity - ori îl închidem, ori îl preluați voi”. 
-Acesta a fost un moment decisiv, în care mulți alumni s-au implicat cât de mult au putut, cu un sfat, o ședință sau chiar săptămâni întregi de muncă, pentru a creiona Learnity 2.0. Ana Predescu și Ana Stinghe, alături de o echipă de learnitași experimentați din comunitate, au adunat echipa ce urma să fie următoarea echipă de organizare sau “Core Team” a primului an din varianta nouă Learnity. După multe ședințe cu mentori, întâlniri strategice cu alumni și design de proiect, s-a dat startul unui nou an Learnity!!
-
-
+          Acesta a fost un moment decisiv, în care mulți alumni s-au implicat cât de mult au putut, cu un sfat, o ședință sau chiar săptămâni întregi de muncă, pentru a creiona Learnity 2.0. Ana Predescu și Ana Stinghe, alături de o echipă de learnitași experimentați din comunitate, au adunat echipa ce urma să fie următoarea echipă de organizare sau “Core Team” a primului an din varianta nouă Learnity. După multe ședințe cu mentori, întâlniri strategice cu alumni și design de proiect, s-a dat startul unui nou an Learnity!!
           </p>
         </div>
         <motion.div 
@@ -94,7 +92,7 @@ Acesta a fost un moment decisiv, în care mulți alumni s-au implicat cât de mu
         animate="visible"
         variants={sectionVariants}
       >
-        <h2 className='text-5xl font-bold text-[#05be9e] mb-8 font-bangers tracking-widest'>Cum merge?</h2>
+        <h2 className='text-5xl font-bold text-[#05be9e] mb-8 font-bangers tracking-widest'>Cum arată acum?</h2>
         <div className='flex flex-col md:flex-row items-center justify-center gap-8 mb-8'>
           <p className='text-xl text-center md:text-left max-w-lg font-arima'>
           Ne-am dat seama că, pe de o parte, visam la o comunitate complet autonomă, autodirijata, unde totul este creat de learnitasi de la 0, un proiect destul de diferit și ambițios în comparație cu ce era Learnity înainte. Pe de o alta parte, voiam să păstram structura cursurilor și evenimentelor cu care ne obișnuisem în Learnity și cu care știam că și noile generații vor rezona. Așa că, acum avem Playground, partea prin care oferim libertatea și autonomia atât de valoroase procesului de învățare, dar și partea de Guided Learning în care adolescenții se pot bucura de cursuri și workshop-uri organizate pe baza nevoilor și intereselor lor. Așa am dat startul unui nou an de Learnity, în a doua sa etapă, în care proiectul continua să crească și să formeze “changemakers”!

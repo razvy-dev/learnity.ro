@@ -10,7 +10,7 @@ const playgroundWorkshops = [
     id: 1,
     title: "Excursie: Târgul de Crăciun din Craiova",
     description:
-      "Children discover the wonders of nature through guided exploration, scavenger hunts, and hands-on activities in our outdoor learning spaces. Perfect for curious minds who love the outdoors!",
+      "Câțiva learnitași au petrecut o zi la Târgul de Crăciun din Craiova, într-o excursie organizată de Grupul de Fotografie. Ne-am bucurat de oraș, de momente împreună și de magia iernii, într-o atmosferă caldă și plină de voie bună.",
     image: pg1,
     date: "20 decembrie, 2024",
     link: "/playground",
@@ -68,7 +68,7 @@ const PlaygroundExamples = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            In Playground, elevii au oportunitatea de a-si lua invatarea in propriile maini, fie prin a deveni ei profi si a sustine workshop-uri sau prin a organiza evenimente alaturi de alti learnitasi pentru restul comunitatii, toate acestea sub ghidajul si indrumarea noastra
+            În Playground, elevii au oportunitatea de a-și lua învățarea în propriile mâini, fie prin a deveni ei profesori și a susține workshop-uri, fie prin a organiza evenimente alături de alți learniți pentru restul comunității, toate acestea sub ghidajul și îndrumarea noastră.
           </p>
         </div>
 

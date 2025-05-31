@@ -1,7 +1,6 @@
 import { useInView } from "react-intersection-observer"
 import { Link } from "react-router-dom"
 import { Heart, BookOpen, Users, Sparkles } from "lucide-react"
-import img1 from './assets/doneaza1.jpg';
 import img2 from './assets/doneaza2.jpg';
 
 const DonateSection = () => {
@@ -23,7 +22,7 @@ const DonateSection = () => {
           {/* Left column - Text content */}
           <div className="order-2 lg:order-1">
             <div className={`mb-6 ${inView ? "animate-slide-up" : "opacity-0"}`} style={{ transitionDelay: "0.1s" }}>
-              <h2 className="text-4xl md:text-5xl font-bangers text-customBlack mb-4 italic">
+              <h2 className="text-4xl md:text-5xl tracking-wide font-bangers text-customBlack mb-4 italic">
                 Susține educația alternativă!
               </h2>
               <div className="w-32 h-2 bg-customOrange rounded-full"></div>
@@ -47,7 +46,7 @@ const DonateSection = () => {
                 <div>
                   <h3 className="text-xl font-bold text-customBlack mb-1">Susține un Learnitaș</h3>
                   <p className="text-customBlack">
-                    Ajută-ne să oferim burse adolescenților care își doresc să poată beneficia de educație alternativă.
+                    Ajută-ne să oferim burse adolescenților care își doresc să poată beneficia de educație alternativă dar nu au resursele necesare pentru asta.
                   </p>
                 </div>
               </div>
@@ -103,9 +102,6 @@ const DonateSection = () => {
                   alt="Happy students in a creative learning environment"
                   className="w-full h-auto"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-customBlue to-transparent p-6">
-                  <p className="text-white font-bold text-lg">Empowering young minds through creative education</p>
-                </div>
               </div>
 
               {/* Decorative element */}

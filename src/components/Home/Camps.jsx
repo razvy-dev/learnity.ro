@@ -21,7 +21,7 @@ const Camps = () => {
       date: "17-23 august 2025",
       location: "Predeluț, Bran",
       description:
-        "O tabără pentru liceeni care vor să devină changemakers.Dezvoltăm dibacii esențiale pentru viață: autocunoaștere, comunicare, colaborare, responsabilitate și viziune critică. Totul prin ateliere, jocuri și activități cu sens. 🔎 Focus: dezvoltare personală, relații sănătoase, sens și reziliență",
+        <>O tabără pentru liceeni care vor să devină changemakers. Dezvoltăm dibăcii esențiale pentru viață: autocunoaștere, comunicare, colaborare, responsabilitate și viziune critică. Totul prin ateliere, jocuri și activități cu sens. <br /> 🔎 Focus: <strong> dezvoltare personală, relații sănătoase, sens și reziliență </strong> </>,
       image: changemakers,
       ref: ref1,
       inView: inView1,
@@ -30,10 +30,10 @@ const Camps = () => {
     {
       id: 2,
       title: "Dare yourself",
-      date: "14-20 iunie 2025",
+      date: "14-20 iulie 2025",
       location: "Predeluț, Bran",
       description:
-        " O tabără care te scoate din zona de confort. Explorăm curajul, fricile, limitele personale și autenticitatea într-un spațiu sigur, ghidat de psihologi. Crești, te provoci, devii mai încrezător. 🔎 Focus: curaj, limite personale, autenticitate, depășirea fricilor",
+        <>O tabără care te scoate din zona de confort. Explorăm curajul, fricile, limitele personale și autenticitatea într-un spațiu sigur, ghidat de psihologi. Crești, te provoci, devii mai încrezător. <br /> 🔎 Focus: <strong> curaj, limite personale, autenticitate, depășirea fricilor </strong> </>,
       image: dare,
       ref: ref2,
       inView: inView2,
@@ -49,7 +49,7 @@ const Camps = () => {
 
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bangers text-center text-customBlack mb-12 italic">
-          Alte Tabere Learnity
+          Taberele Learnity
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

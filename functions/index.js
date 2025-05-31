@@ -120,8 +120,8 @@ export const createCheckoutSession = onCall({ secrets: [stripeSecret] }, async (
         },
       ],
       customer_email: email,
-      success_url: "http://localhost:5173/thank-you", // Replace with your deployed site
-      cancel_url: "http://localhost:5173/xyz",
+      success_url: "http://learnity.ro/see-you-there", // Replace with your deployed site
+      cancel_url: "http://learnity/something-went-wrong",
     });
 
     console.log("Created session:", session.id);

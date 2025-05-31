@@ -1,10 +1,14 @@
-"use client"
-
 import { useRef } from "react"
 import { Link } from "react-router-dom"
 import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
 import { MapPin, Calendar, Users, Heart, Globe, MessageCircle } from "lucide-react"
+import changemakers from './assets/changemakers.jpg';
+import changemakersCalendar from './assets/changemakers-calendar.png'
+import andrei from './assets/andrei.jpeg';
+import andreea1 from './assets/andreea1.jpeg';
+import andreea2 from './assets/andreea2.jpeg';
+import changemakers2 from './assets/changemakers2.jpg';
 
 const ChangemakersCamp = () => {
   // Refs for parallax effects
@@ -127,7 +131,7 @@ const ChangemakersCamp = () => {
               <div className="absolute -inset-6 border-2 border-dotted border-customOrange/50 rounded-xl"></div>
               <div className="absolute -inset-3 border-2 border-customBlue/30 rounded-lg"></div>
 
-              <h1 className="text-6xl md:text-7xl font-black tracking-tighter relative text-customBlack">
+              <h1 className="text-4xl md:text-7xl font-black tracking-tighter relative text-customBlack">
                 <span className="relative inline-block">
                   <span className="relative z-10">CHANGEMAKERS</span>
                   <motion.span
@@ -231,7 +235,7 @@ const ChangemakersCamp = () => {
                 {/* Image placeholder */}
                 <div className="relative mt-8 rounded-lg overflow-hidden shadow-lg">
                   <div className="aspect-video bg-customLightBlue/30 flex items-center justify-center">
-                    <p className="text-customBlue font-medium">Imagine tabără (va fi adăugată)</p>
+                    <img src={changemakers} alt="changemakers camp" />
                   </div>
                 </div>
               </div>
@@ -245,7 +249,7 @@ const ChangemakersCamp = () => {
 
                 <p className="text-lg mb-6 text-customBlack leading-relaxed">
                   Changemaker Camp este locul unde dezvoltăm abilități esențiale pentru viață – ceea ce noi numim
-                  <span className="font-bold text-customBlue"> dibacii</span>.
+                  <span className="font-bold text-customBlue"> dibăcii</span>.
                 </p>
 
                 <p className="text-lg mb-6 text-customBlack leading-relaxed">
@@ -298,7 +302,7 @@ const ChangemakersCamp = () => {
               <div className="absolute -inset-6 border-2 border-dashed border-customOrange/30 rounded-xl"></div>
               <h2 className="text-4xl font-black mb-6 tracking-tighter text-customBlack">
                 CE SUNT <br />
-                <span className="text-customBlue">DIBACIILE?</span>
+                <span className="text-customBlue">dibăciILE?</span>
               </h2>
             </div>
 
@@ -455,7 +459,7 @@ const ChangemakersCamp = () => {
 
             {/* Video placeholder */}
             <div className="aspect-video bg-customLightBlue/20 rounded-lg flex items-center justify-center">
-              <p className="text-customBlue font-medium">Video tabără (va fi adăugat)</p>
+              <img src={changemakers2} alt="changemakers camp" />
             </div>
           </motion.div>
         </div>
@@ -502,7 +506,7 @@ const ChangemakersCamp = () => {
             <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-lg overflow-hidden">
               {/* Trainer image placeholder */}
               <div className="aspect-square bg-customLightBlue/30 flex items-center justify-center">
-                <p className="text-customBlue font-medium">Imagine Andreea-Anamaria (va fi adăugată)</p>
+                <img src={andreea1} alt="Andreea" />
               </div>
 
               <div className="p-6">
@@ -520,7 +524,7 @@ const ChangemakersCamp = () => {
             <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-lg overflow-hidden">
               {/* Trainer image placeholder */}
               <div className="aspect-square bg-customLightOrange/30 flex items-center justify-center">
-                <p className="text-customOrange font-medium">Imagine Andreea Mutu-Necula (va fi adăugată)</p>
+                <img src={andreea2} alt="Andreea Mutu Necula" />
               </div>
 
               <div className="p-6">
@@ -539,7 +543,7 @@ const ChangemakersCamp = () => {
             <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-lg overflow-hidden">
               {/* Trainer image placeholder */}
               <div className="aspect-square bg-customLightBlue/30 flex items-center justify-center">
-                <p className="text-customBlue font-medium">Imagine Andrei Dumitrache (va fi adăugată)</p>
+                <img src={andrei} alt="andrei dumitrache" />
               </div>
 
               <div className="p-6">
@@ -601,7 +605,7 @@ const ChangemakersCamp = () => {
 
               {/* Google Maps placeholder */}
               <div className="aspect-video bg-customLightBlue/20 rounded-lg flex items-center justify-center">
-                <p className="text-customBlue font-medium">Google Maps (va fi adăugat)</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11179.97299316975!2d25.342336825850992!3d45.53034141903415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b3486eb99cd875%3A0xc5d78c75f78b9f74!2s507026%20Predelu%C8%9B!5e0!3m2!1sen!2sro!4v1747562044184!5m2!1sen!2sro" width="600" height="450" style={{ border:0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
 
               <div className="mt-4 text-customBlack/80">
@@ -624,7 +628,7 @@ const ChangemakersCamp = () => {
 
               {/* Calendar image placeholder */}
               <div className="aspect-video bg-customLightOrange/20 rounded-lg flex items-center justify-center">
-                <p className="text-customOrange font-medium">Imagine calendar (va fi adăugată)</p>
+                <img src={changemakersCalendar} alt="changemakers calendar" />
               </div>
 
               <div className="mt-4 text-customBlack/80">

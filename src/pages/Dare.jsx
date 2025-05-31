@@ -1,10 +1,11 @@
-"use client"
-
 import { useRef } from "react"
 import { Link } from "react-router-dom"
 import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
 import { MapPin, Calendar, ArrowRight, Shield, Mountain, Users, Heart } from "lucide-react"
+import dare from './assets/dare.jpg';
+import dareCalendar from './assets/dare-calendar.png'
+import dare2 from './assets/dare2.jpg';
 
 const DareYourself = () => {
   // Refs for parallax effects
@@ -243,7 +244,7 @@ const DareYourself = () => {
                 {/* Image placeholder */}
                 <div className="relative mt-8 rounded-lg overflow-hidden shadow-lg transform rotate-2">
                   <div className="aspect-video bg-customLightOrange/30 flex items-center justify-center">
-                    <p className="text-customOrange font-medium">Imagine tabără (va fi adăugată)</p>
+                    <img src={dare} alt="dare yourself" />
                   </div>
                 </div>
               </div>
@@ -270,7 +271,7 @@ const DareYourself = () => {
                 {/* Video placeholder */}
                 <div className="mt-8 rounded-lg overflow-hidden shadow-md">
                   <div className="aspect-video bg-customLightBlue/20 flex items-center justify-center">
-                    <p className="text-customBlue font-medium">Video tabără (va fi adăugat)</p>
+                    <img src={dare2} alt="dare2" />
                   </div>
                 </div>
               </div>
@@ -504,7 +505,7 @@ const DareYourself = () => {
 
                 {/* Google Maps placeholder */}
                 <div className="aspect-video bg-customLightOrange/20 rounded-lg flex items-center justify-center">
-                  <p className="text-customOrange font-medium">Google Maps (va fi adăugat)</p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11179.97299316975!2d25.342336825850992!3d45.53034141903415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b3486eb99cd875%3A0xc5d78c75f78b9f74!2s507026%20Predelu%C8%9B!5e0!3m2!1sen!2sro!4v1747562044184!5m2!1sen!2sro" width="600" height="450" style={{ border:0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
                 <div className="mt-4 text-customBlack/80">
@@ -532,7 +533,7 @@ const DareYourself = () => {
 
                 {/* Calendar image placeholder */}
                 <div className="aspect-video bg-customLightBlue/20 rounded-lg flex items-center justify-center">
-                  <p className="text-customBlue font-medium">Imagine calendar (va fi adăugată)</p>
+                  <img src={dareCalendar} alt="dare yourself calendar" />
                 </div>
 
                 <div className="mt-4 text-customBlack/80">
@@ -556,11 +557,11 @@ const DareYourself = () => {
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Transportul până la locație nu este inclus</span>
+                  <span>Transportul până la locație este inclus</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Numărul de locuri este limitat la 20 de participanți</span>
+                  <span>Numărul de locuri este limitat la 35 de participanți</span>
                 </li>
               </ul>
             </div>

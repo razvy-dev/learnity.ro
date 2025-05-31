@@ -26,6 +26,8 @@ import stefaniaMihalache from './assets/stefania-mihalache.jpg';
 import traianBrumă from './assets/traian-bruma.jpg';
 import mihaiRadu from './assets/mihai-radu.jpg';
 import vladBalosin from './assets/vlad-balosin.jpeg';
+import mamaAnei from './assets/mama_anei.jpeg';
+import cosmin from './assets/cosmin.jpeg';
 
 
 const WhatTheFuture = () => {
@@ -143,8 +145,8 @@ const WhatTheFuture = () => {
     { name: "Alexandra Stamate", role: "Designer de interior", color: "bg-customOrange", image: alexandraStamate },
     { name: "Mihai Radu", role: "Jurnalist și scriitor", color: "bg-customBlue", image: mihaiRadu },
     { name: "Marlena Pavel", role: "Ofițer de poliție", color: "bg-customOrange", image: MarlenaPavel },
-    { name: "Cosmin Muscălescu", role: "Creative Director", color: "bg-customBlue" },
-    { name: "Corina Predescu", role: "Medic", color: "bg-customOrange" },
+    { name: "Cosmin Muscălescu", role: "Creative Director", color: "bg-customBlue", image: cosmin },
+    { name: "Corina Predescu", role: "Medic", color: "bg-customOrange", image: mamaAnei },
     { name: "Alex Necșulescu", role: "Psiholog", color: "bg-customBlue", image: alexNecsulescu },
     { name: "Silva Helena Schmidt", role: "Actriță", color: "bg-customOrange", image: slivia },
     { name: "Stefania Mihalache", role: "Scriitoare", color: "bg-customBlue", image: stefaniaMihalache },
@@ -582,7 +584,7 @@ const WhatTheFuture = () => {
         className="py-20 bg-gradient-to-b from-white to-customWhite relative overflow-hidden"
       >
         {/* New decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-0 left-0 h-full">
           {/* Horizontal stripes */}
           <div className="absolute top-20 left-0 w-full h-2 bg-customLightBlue/20"></div>
           <div className="absolute top-24 left-0 w-full h-1 bg-customLightOrange/20"></div>
@@ -613,7 +615,7 @@ const WhatTheFuture = () => {
               <h2 className="text-5xl font-black mb-6 tracking-tighter text-customBlack">
                 CUM ARATĂ O ZI DE <br />
                 <span className="text-customBlue">WTFUTURE</span>
-                <span className="text-3xl ml-4">(MAI 2024)</span>
+                <span className="text-3xl ml-4">(IUNIE 2025)</span>
               </h2>
             </div>
           </motion.div>
@@ -629,7 +631,7 @@ const WhatTheFuture = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-customWhite/70 p-6 rounded-lg relative">
+                <div className="bg-customWhite/70 p-6 rounded-lg relative max-w-[80dvw] ">
                   {/* Day indicator */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-customBlue rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                     1
@@ -637,56 +639,60 @@ const WhatTheFuture = () => {
 
                   <h3 className="text-2xl font-bold mb-4 text-customBlue pl-8">Program ziua 1</h3>
                   <ul className="space-y-4 text-customBlack">
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">10:30-11:00</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">11:00-11:30: </span>
                       <span>Deschidere</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">11:00-12:00</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">11:30-12:30: </span>
                       <span>Workshop: Care e treaba cu cariera?</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">12:10-13:25</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">12:40-13:30: </span>
                       <span>
                         Sesiunea 1
                         <ul className="list-disc ml-6 mt-2">
-                          <li>Medicină</li>
-                          <li>Drept</li>
-                          <li>Marketing</li>
+                          <li>Criminalistică vs. Criminologie</li>
+                          <li>Arhitectură vs. Design interior</li>
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">13:25-13:40</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">13:30-13:40: </span>
                       <span>Pauză</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">13:40-15:10</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">13:40-15:00: </span>
                       <span>
                         Sesiunea 2
                         <ul className="list-disc ml-6 mt-2">
-                          <li>Arhitectură vs. design interior</li>
-                          <li>"În PCM" a.k.a cum e să fii polițist de investigații</li>
+                          <li>STEM</li>
+                          <li>Educație</li>
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">15:10-16:10</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">15:00-16:00: </span>
                       <span>Pauză de masă</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">16:10-17:40</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">16:00-17:00: </span>
                       <span>
                         Sesiunea 3
                         <ul className="list-disc ml-6 mt-2">
-                          <li>Science/Technology/Engineering/Math</li>
-                          <li>Viața de artist</li>
+                          <li>IT</li>
+                          <li>Relații internaționale</li>
+                          <li>Medicină</li>
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customOrange">17:40-18:00</span>
-                      <span>Încheiere</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">17:00-17:10: </span>
+                      <span>Pauză</span>
+                    </li>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customOrange">17:10-19:00: </span>
+                      <span>Viața de artist</span>
                     </li>
                   </ul>
                 </div>
@@ -699,41 +705,41 @@ const WhatTheFuture = () => {
 
                   <h3 className="text-2xl font-bold mb-4 text-customOrange pl-8">Program ziua 2</h3>
                   <ul className="space-y-4 text-customBlack">
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">11:00-11:15</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">11:30-12:00: </span>
                       <span>Deschidere</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">11:15-12:30</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">12:00-13:30: </span>
                       <span>
                         Sesiunea 1
                         <ul className="list-disc ml-6 mt-2">
-                          <li>IT</li>
-                          <li>Jurnalism</li>
                           <li>Antreprenoriat</li>
+                          <li>Activism civic</li>
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">12:30-12:40</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">13:30-13:40: </span>
                       <span>Pauză</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">12:40-14:10</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">13:40-14:55: </span>
                       <span>
                         Sesiunea 2
                         <ul className="list-disc ml-6 mt-2">
                           <li>Psihologie vs. Psihiatrie</li>
-                          <li>Relații internaționale vs. Diplomație</li>
+                          <li>Jurnalism</li>
+                          <li>Marketing</li>
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">14:10-15:10</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">14:55-16:00: </span>
                       <span>Pauză de masă</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">15:10-17:10</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">16:00-17:15: </span>
                       <span>
                         Prezentare: Cum ar fi să studiezi în afară?
                         <ul className="list-disc ml-6 mt-2">
@@ -741,16 +747,16 @@ const WhatTheFuture = () => {
                         </ul>
                       </span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">17:10-17:20</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">17:15-17:25: </span>
                       <span>Pauză</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">17:20-18:30</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">17:25-19:00: </span>
                       <span>Panel: O viață nonconformistă</span>
                     </li>
-                    <li className="flex">
-                      <span className="font-bold w-32 text-customBlue">18:30-19:00</span>
+                    <li className="md:flex flex-col">
+                      <span className="font-bold w-32 text-customBlue">19:00-19:10: </span>
                       <span>Încheiere</span>
                     </li>
                   </ul>
@@ -843,7 +849,7 @@ const WhatTheFuture = () => {
                 >
                   {/* Decorative ring */}
                   <div className="absolute inset-0 border-4 border-white/20 rounded-full"></div>
-                  <img src={speaker.image} alt="speaker" className="object-cover" />
+                  <img src={speaker.image} alt="speaker" className="h-[100%] w-[100%] object-cover" />
                 </div>
                 <h3 className="font-bold text-center text-customBlack">{speaker.name}</h3>
                 <p className="text-sm text-customBlack/70 text-center">{speaker.role}</p>
@@ -873,7 +879,7 @@ const WhatTheFuture = () => {
         initial="hidden"
         animate={galleryInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="py-20 bg-gradient-to-b from-customWhite to-white relative overflow-hidden"
+        className="py-20 bg-customWhite relative overflow-hidden"
       >
         {/* New decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full">
@@ -909,7 +915,7 @@ const WhatTheFuture = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 md:grid-cols-3 gap-4">
               {[p1, p2, p3, p5, p6, p7].map((pic, index) => (
                 <div
                   key={index}
@@ -956,7 +962,7 @@ const WhatTheFuture = () => {
         initial="hidden"
         animate={aboutUsInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="py-20 bg-white relative overflow-hidden"
+        className="py-20 bg-customWhite relative overflow-hidden"
       >
         {/* New decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full">
@@ -1000,7 +1006,7 @@ const WhatTheFuture = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-            <div className="bg-customWhite rounded-xl p-8 shadow-lg relative">
+            <div className="bg-white rounded-xl p-8 shadow-lg relative">
               {/* Decorative corner elements */}
               <div className="absolute top-0 left-0 w-16 h-16 overflow-hidden">
                 <div className="absolute w-8 h-8 border-t-4 border-l-4 border-customBlue rounded-tl-lg"></div>
@@ -1038,13 +1044,13 @@ const WhatTheFuture = () => {
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8">
 
-                  <div className="flex gap-6">
+                  <div className="md:flex flex-col justify-around gap-6">
                     <motion.a
                       href="https://instagram.com/learnityro"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
-                      className="flex items-center gap-2 text-customBlack hover:text-customBlue transition-colors relative"
+                      className="flex items-center gap-2 md:my-0 my-6 text-customBlack hover:text-customBlue transition-colors relative"
                     >
                       {/* Decorative highlight */}
                       <div className="absolute inset-0 bg-customLightBlue/30 rounded-full -z-10"></div>
@@ -1053,11 +1059,11 @@ const WhatTheFuture = () => {
                     </motion.a>
 
                     <motion.a
-                      href="https://instagram.com/whatthefuture.learnity"
+                      href="https://www.instagram.com/whatthefuture.learnity/"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
-                      className="flex items-center gap-2 text-customBlack hover:text-customOrange transition-colors relative"
+                      className="flex items-center md:my-0 my-6 gap-2 text-customBlack hover:text-customOrange transition-colors relative"
                     >
                       {/* Decorative highlight */}
                       <div className="absolute inset-0 bg-customLightOrange/30 rounded-full -z-10"></div>
@@ -1069,7 +1075,7 @@ const WhatTheFuture = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
-                      className="flex items-center gap-2 text-customBlack hover:text-customBlue transition-colors relative"
+                      className="flex items-center md:my-0 my-6 gap-2 text-customBlack hover:text-customBlue transition-colors relative"
                     >
                       {/* Decorative highlight */}
                       <div className="absolute inset-0 bg-customLightBlue/30 rounded-full -z-10"></div>

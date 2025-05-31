@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer"
 import { Quote } from "lucide-react"
-import rebeca from './assets/rebeca.jpeg';
+import teodora from './assets/teodora.jpeg';
 import alex from './assets/alex.jpeg';
 import smaranda from './assets/smaranda.jpeg';
 import prof2 from './assets/prof2.jpg';
@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const teachers = [
   {
     id: 1,
-    name: "Rebeca Bășuț",
+    name: "Teodora ",
     course: "Relații internaționale",
-    image: rebeca,
+    image: teodora,
     quote:
       "Relațiile internaționale explicate pe gustul tinerilor",
   },
@@ -49,6 +49,14 @@ const teachers = [
     quote:
       "Descoperă secretele antreprenoriatului prin povești reale și lecții practice!",
   },
+  {
+    id: 6,
+    name: "Patricia Katone",
+    course: "To be or not to be",
+    image: prof3,
+    quote:
+      "Descoperă secretele antreprenoriatului prin povești reale și lecții practice!",
+  },
 ]
 
 const TeachersShowcase = () => {
@@ -73,7 +81,7 @@ const TeachersShowcase = () => {
             style={{ transitionDelay: "0.1s" }}
           >
             <h2 className="text-4xl md:text-5xl font-bangers text-customBlack mb-4 italic">
-              Profesorii noștri
+              Câțiva dintre profesorii noștri
             </h2>
             <div className="w-40 h-2 bg-customOrange mx-auto rounded-full"></div>
           </div>
@@ -82,7 +90,7 @@ const TeachersShowcase = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            Profesorii noștri pasionați aduc învățarea la viață cu creativitate, expertiză și o înțelegere profundă a modului în care copiii învață cel mai bine. Fiecare profesor contribuie cu talentele sale unice pentru a crea un mediu captivant și de susținere.
+            Profesorii noștri pasionați aduc învățarea la viață cu creativitate, expertiză și o înțelegere profundă a modului în care copiii învață cel mai bine. Fiecare profesor contribuie cu aptitudinile sale unice pentru a crea un mediu captivant și sigur.
           </p>
         </div>
 

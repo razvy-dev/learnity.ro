@@ -145,7 +145,7 @@ const SpinningTopSection = () => {
 
               {/* Instruction text */}
               <p className="text-center mt-4 text-customBlack italic">
-                {isHovering ? "Titireazul se rotește mai repede!" : "Atinge titireazul pentru a-l accelera"}
+                {isHovering ? "Titirezul se rotește mai repede!" : "Atinge titirezul pentru a-l accelera"}
               </p>
             </div>
           </div>

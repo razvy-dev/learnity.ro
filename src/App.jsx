@@ -26,11 +26,15 @@ import ChangemakersCamp from "./pages/Changemakers"
 import DareYourself from "./pages/Dare"
 import NextExperiences from "./pages/Next"
 import ComingSoon from "./components/ComingSoon"
+import SeeYouThere from "./pages/SeeYouThere"
+import SomethingWentWrong from "./pages/SomethingWentWrong"
+import ScrollToTop from './components/ScrollToTop'
 
 const Layout = () => {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <main>
         <Outlet />
       </main>
@@ -64,6 +68,8 @@ const AppRoutes = () => {
         { path: '/dare-yourself', element: <DareYourself /> },
         { path: '/next-experiences', element: <NextExperiences />},
         { path: '/coming-soon', element: <ComingSoon /> },
+        { path: '/see-you-there', element: <SeeYouThere /> },
+        { path: '/something-went-wrong', element: <SomethingWentWrong />},
         { path: '*', element: <NotFound /> },
       ]
     }

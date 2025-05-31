@@ -43,7 +43,7 @@ const courses = [
     name: "Self Discovery Journey",
     description:
       "Un parcurs în 7 întâlniri săptămânale, unde vei explora cine ești, ce te motivează și cum poți deveni o versiune mai încrezătoare și mai autentică a ta. Ce vei descoperi pe parcurs: \n 1. Gândirea, Cogniții și Bias-uri – Cum ne influențează gândurile deciziile și felul în care vedem lumea.  \n 2. Nevoi și Motivații– Ce te impulsionează cu adevărat și cum poți învăța să-ți recunoști și să-ți respecți nevoile. \n 3. Emoții și Inteligența Emoțională– Cum să înțelegi ce simți și să gestionezi emoțiile într-un mod sănătos. \n 4. Stiluri de Decizie – Cum să iei decizii mai clare și mai potrivite pentru tine. \n 5. Imagine de sine și Încredere în sine – Cum să-ți construiești o relație mai bună cu tine și să crezi în valoarea ta. \n 6. Idealuri și Valori– Ce contează cu adevărat pentru tine și cum să faci alegeri care reflectă asta. \n Acest grup este mai mult decât o serie de întâlniri – este o oportunitate să înveți mai multe despre tine și despre ce te face să te simți bine în pielea ta.",
-    teacher: "Aisha Patel",
+    teacher: "Miruna Anin",
     image: sdj,
     subjects: ["Ecosystem Studies", "Sustainable Gardening", "Wildlife Observation", "Conservation Projects"],
     dateInterval: "14 martie - 18 aprilie, 2025",
@@ -90,8 +90,7 @@ const GuidedCourses = () => {
             className={`text-lg text-customBlack max-w-2xl mx-auto mt-6 ${inView ? "animate-fade-in" : "opacity-0"}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            Explore some of our most popular courses from previous terms. These examples showcase the diverse learning
-            experiences we offer at Learnity.
+            Explorați unele dintre cele mai populare cursuri din trimestrele anterioare. Aceste exemple prezintă diversele experiențe de învățare pe care le oferim la Learnity.
           </p>
         </div>
 

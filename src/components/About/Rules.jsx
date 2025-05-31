@@ -43,7 +43,7 @@ const RulesAndValuesSection = () => {
       id: 1,
       title: "Libertatea mea se oprește unde începe libertatea ta",
       description:
-        "Treat everyone with kindness and respect. Listen to others' ideas, honor differences, and use positive language. Remember that respect extends to our physical space and materials too.",
+        "Acest principiu înseamnă că suntem liberi să facem alegeri, dar fără a-i răni sau a le încălca drepturile celorlalți. Libertatea fiecăruia trebuie să existe în echilibru cu libertatea celorlalți.",
       icon: <Star className="w-6 h-6 text-customOrange" />,
     },
     {
@@ -62,9 +62,9 @@ const RulesAndValuesSection = () => {
     },
     {
       id: 4,
-      title: "Safe Environment",
+      title: "Safe enviroment",
       description:
-        "Help maintain physical and emotional safety for all. Move carefully in our spaces, use materials appropriately, and consider how your words and actions affect others.",
+        "Ajută la menținerea siguranței fizice și emoționale pentru toți. Mișcă-te cu grijă în spațiile noastre, folosește materialele în mod corespunzător și gândește-te cum îți afectează cuvintele și acțiunile pe cei din jur.",
       icon: <Star className="w-6 h-6 text-customOrange" />,
     },
     {
@@ -119,7 +119,7 @@ const RulesAndValuesSection = () => {
                   : "bg-transparent text-customBlack hover:bg-gray-200"
               }`}
             >
-              Core Values
+              Valori
             </button>
             <button
               onClick={() => setActiveTab("rules")}
@@ -129,7 +129,7 @@ const RulesAndValuesSection = () => {
                   : "bg-transparent text-customBlack hover:bg-gray-200"
               }`}
             >
-              Community Agreements
+              Regulile comunității
             </button>
           </div>
         </div>
@@ -215,8 +215,7 @@ const RulesAndValuesSection = () => {
                 >
                   <div className="bg-white rounded-xl p-6 shadow-md inline-block">
                     <p className="text-customBlack font-bold italic">
-                      "These agreements help us create a learning environment where everyone can thrive. When we follow
-                      these principles, we build a community of trust, respect, and joyful learning."
+                      Aceste acorduri ne ajută să creăm un mediu de învățare în care toată lumea poate evolua. Atunci când respectăm aceste principii, construim o comunitate bazată pe încredere, respect și bucuria de a învăța.
                     </p>
                   </div>
                 </div>

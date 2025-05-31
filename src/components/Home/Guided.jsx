@@ -84,7 +84,7 @@ const GuidedLearningSection = () => {
                 <div>
                   <h3 className="text-xl font-bold text-customBlack mb-2">Cursuri</h3>
                   <p className="text-customBlack">
-                    Cursurile sunt experiențe de învățare care consistă din mai multe sesiuni, permițându-le adolescenților să exploreze în adâncime subiectul abordat
+                    Cursurile sunt experiențe de învățare care constau în mai multe sesiuni, permițându-le adolescenților să exploreze în adâncime subiectul abordat
                     alături de profesioniști din domeniul respectiv. Acestea au aproximativ 6-7 sesiuni de curs, fiecare de căte două ore, pline de exerciții, discuții și teorie explicată pe înțelesul lor.
                   </p>
                 </div>
@@ -118,7 +118,7 @@ const GuidedLearningSection = () => {
                 <div>
                   <h3 className="text-xl font-bold text-customBlack mb-2">Bootcamp-uri</h3>
                   <p className="text-customBlack">
-                  Tabere de weekend in care elevii invata super practic, se conecteaza cu oameni faini si isi ies complet din rutina. Fiecare dintre ele dezvolta abilitati cheie precum creativitatea, gandirea critica si lucrul in echipa, intr-un mediu nou si provocator, cu adevarat in afara zonei de confort.
+                  Tabere de weekend în care elevii învață super practic, se conectează cu oameni faini și își ies complet din rutină. Fiecare dintre ele dezvoltă abilități cheie precum creativitatea, gândirea critică și lucrul în echipă, într-un mediu nou și provocator, cu adevărat în afara zonei de confort.
                   </p>
                 </div>
               </div>
