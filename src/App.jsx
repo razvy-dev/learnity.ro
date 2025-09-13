@@ -29,6 +29,8 @@ import ComingSoon from "./components/ComingSoon"
 import SeeYouThere from "./pages/SeeYouThere"
 import SomethingWentWrong from "./pages/SomethingWentWrong"
 import ScrollToTop from './components/ScrollToTop'
+import DareForm from "./pages/DareForm"
+import PDForm from "./pages/PD/Form"
 
 const Layout = () => {
   return (
@@ -67,9 +69,11 @@ const AppRoutes = () => {
         { path: '/changemakers-camp', element: <ChangemakersCamp /> },
         { path: '/dare-yourself', element: <DareYourself /> },
         { path: '/next-experiences', element: <NextExperiences />},
+        { path: '/dare-yourself-form', element: <DareForm />},
         { path: '/coming-soon', element: <ComingSoon /> },
         { path: '/see-you-there', element: <SeeYouThere /> },
         { path: '/something-went-wrong', element: <SomethingWentWrong />},
+        { path: '/porti-deschise', element: <PDForm />},
         { path: '*', element: <NotFound /> },
       ]
     }

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { functions } from "../../state/firebase/firebase"
-import { httpsCallable } from "firebase/functions"
+import { addDoc, collection } from "firebase/firestore"
+import { db } from "../../state/firebase/firebase"
+import { useNavigate } from 'react-router-dom'
 
 const WTForm = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,29 @@ const WTForm = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate()
+
+  async function submitFormData(formData) {
+    try {
+      console.log(formData)
+      const docRef = await addDoc(collection(db, "wtf"), {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        school: formData.school,
+        grade: formData.grade,
+        attendanceDays: formData.attendanceDays,
+        reason: formData.reason,
+        referralSource: formData.referralSource,
+        createdAt: new Date() // optional: timestamp
+      });
+
+      return true
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+    }
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -35,28 +59,6 @@ const WTForm = () => {
       }))
     }
   }
-
-//   const handleSubmit = async e => {
-//     e.preventDefault();
-//     setLoading(true);
-
-//     try {
-//       const createCheckoutSession = httpsCallable(functions, "createCheckoutSession");
-
-//       const result = await createCheckoutSession({
-//         name: formData.name,
-//         email: formData.email,
-//       });
-
-//       const { url } = result.data;
-//       window.location.href = url; // 🔁 Redirect to Stripe
-//     } catch (error) {
-//       console.error("Error starting payment", error);
-//       alert("There was an error. Please try again.");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
 
   const validateForm = () => {
     const newErrors = {}
@@ -74,38 +76,28 @@ const WTForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (validateForm()) {
+      try {
+
+        if (validateForm()) {
       setIsSubmitting(true)
 
       setTimeout(() => {
         setIsSubmitting(false)
         setSubmitted(true)
         console.log("Form data:", formData)
+        const good = submitFormData(formData)
+        if (good) navigate("/see-you-there")
       }, 1500)
 
       e.preventDefault();
-      setLoading(true);
+      setLoading(true);}
 
-      try {
-        const createCheckoutSession = httpsCallable(functions, "createCheckoutSession");
-
-        console.log(formData)
-
-        const result = await createCheckoutSession({
-          name: formData.name,
-          email: formData.email,
-          attendanceDays: formData.attendanceDays
-      });
-
-        const { url } = result.data;
-        window.location.href = url;
       } catch (error) {
         console.error("Error starting payment", error);
-        alert("There was an error. Please try again.");
+        navigate("/something-went-wrong")
       } finally {
         setLoading(false);
       }
-    }
   }
 
   const containerVariants = {

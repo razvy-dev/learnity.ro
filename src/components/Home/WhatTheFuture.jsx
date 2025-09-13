@@ -234,7 +234,7 @@ const WhatTheFuture = () => {
             </div>
 
             {/* Pricing card */}
-            <div
+            {/* <div
               className={`bg-white rounded-2xl shadow-lg overflow-hidden mb-8 ${inView ? "animate-fade-in" : "opacity-0"}`}
               style={{ transitionDelay: "0.4s" }}
             >
@@ -261,7 +261,7 @@ const WhatTheFuture = () => {
                   <div className="text-2xl font-bold text-customBlue">{eventDetails.prices.twoDays}</div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* CTA buttons */}
             <div

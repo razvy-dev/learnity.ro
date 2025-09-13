@@ -1,654 +1,447 @@
-import { useRef } from "react"
-import { Link } from "react-router-dom"
-import { useInView } from "react-intersection-observer"
-import { motion } from "framer-motion"
-import { MapPin, Calendar, ArrowRight, Shield, Mountain, Users, Heart } from "lucide-react"
 import dare from './assets/dare.jpg';
-import dareCalendar from './assets/dare-calendar.png'
-import dare2 from './assets/dare2.jpg';
+import andreea1 from './assets/andreea1.jpeg';
+import andreea2 from './assets/andreea2.jpeg';
+import andrei from './assets/andrei.jpeg';
+import { useInView } from "react-intersection-observer"
+import {
+  MapPin,
+  Calendar,
+  Users,
+  Heart,
+  Globe,
+  ArrowRight,
+  CheckCircle,
+  Target,
+  Lightbulb,
+  HandHeart,
+  Phone,
+} from "lucide-react"
+import { Link } from 'react-router-dom';
 
 const DareYourself = () => {
-  // Refs for parallax effects
-  const parallaxRef = useRef(null)
-
-  // Section animations with useInView
-  const [heroRef, heroInView] = useInView({
-    triggerOnce: false,
+  const { ref: heroRef, inView: heroInView } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   })
 
-  const [aboutRef, aboutInView] = useInView({
-    triggerOnce: false,
+  const { ref: aboutRef, inView: aboutInView } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   })
 
-  const [activitiesRef, activitiesInView] = useInView({
-    triggerOnce: false,
+  const { ref: offersRef, inView: offersInView } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   })
 
-  const [logisticsRef, logisticsInView] = useInView({
-    triggerOnce: false,
+  const { ref: themesRef, inView: themesInView } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   })
 
-  const [registerRef, registerInView] = useInView({
-    triggerOnce: false,
+  const { ref: teamRef, inView: teamInView } = useInView({
     threshold: 0.1,
+    triggerOnce: true,
   })
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
+  const { ref: locationRef, inView: locationInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  const { ref: practicalRef, inView: practicalInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  const offers = [
+    {
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: "Ateliere profunde de autocunoaștere și explorare emoțională",
+      description:
+        "Vei învăța să-ți recunoști valorile, emoțiile și tiparele. Să-ți setezi limite sănătoase și să fii autentic în relații.",
     },
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Provocări creative și activități care te scot din zona de confort",
+      description:
+        "Îți vei testa curajul, vei explora noi perspective și vei descoperi în tine resurse pe care nu știai că le ai.",
     },
-  }
+    {
+      icon: <HandHeart className="w-6 h-6" />,
+      title: "Construirea unei comunități reale",
+      description:
+        "Fiecare moment în tabără este despre conexiune: prin ascultare activă, empatie, lucru în echipă și susținere reciprocă.",
+    },
+  ]
 
-  const zigzagPath = "M0,40 L20,60 L40,40 L60,60 L80,40 L100,60 L120,40 L140,60 L160,40 L180,60 L200,40"
+  const themes = [
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Eu cu mine",
+      description: "autocunoaștere, încredere în sine, iubire de sine, reziliență",
+      accentColor: "border-customBlue",
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Eu cu ceilalți",
+      description: "empatie, comunicare, colaborare, ascultare activă",
+      accentColor: "border-customOrange",
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Eu cu lumea",
+      description: "responsabilitate, conștiință ecologică, adaptabilitate, implicare civică",
+      accentColor: "border-green-500",
+    },
+  ]
+
+  const team = [
+    {
+      name: "Andreea Mirescu",
+      role: "psiholog clinician și educațional",
+      image: andreea2,
+    },
+    {
+      name: "Andreea Mutu-Necula",
+      role: "psiholog clinician specializat în consilierea adolescenților",
+      image: andreea1,
+    },
+    {
+      name: "Andrei Dumitrache",
+      role: "psiholog clinician, cu experiență în lucrul cu tineri și adulți",
+      image: andrei,
+    },
+  ]
 
   return (
-    <div className="bg-customWhite overflow-hidden">
+    <div className="bg-white">
       {/* Hero Section */}
-      <motion.section
+      <section
         ref={heroRef}
-        initial="hidden"
-        animate={heroInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
+        className="relativeIt flex items-start md:pt-48 justify-center overflow-hidden bg-white"
+        style={{ marginBottom: 0, paddingBottom: 0 }} // Remove extra space below hero
       >
-        <div className="absolute inset-0 z-0">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-customOrange/10 via-customWhite to-customLightBlue/20 z-10"></div>
-
-          {/* Zigzag patterns */}
-          <svg
-            className="absolute top-0 left-0 w-full h-16 text-customOrange/20"
-            viewBox="0 0 200 60"
-            preserveAspectRatio="none"
-          >
-            <path d={zigzagPath} fill="none" stroke="currentColor" strokeWidth="5" />
-          </svg>
-
-          <svg
-            className="absolute bottom-0 left-0 w-full h-16 text-customBlue/20"
-            viewBox="0 0 200 60"
-            preserveAspectRatio="none"
-          >
-            <path d={zigzagPath} fill="none" stroke="currentColor" strokeWidth="5" />
-          </svg>
-
-          {/* Scattered dots */}
-          <div className="absolute inset-0">
-            {[...Array(30)].map((_, i) => (
-              <div
-                key={i}
-                className={`absolute w-2 h-2 rounded-full ${
-                  i % 3 === 0 ? "bg-customBlue/30" : i % 3 === 1 ? "bg-customOrange/30" : "bg-customBlack/10"
-                }`}
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-              ></div>
-            ))}
-          </div>
+        {/* Subtle decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-customBlue rounded-full opacity-5 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-customOrange rounded-full opacity-5 animate-bounce-slow"></div>
+          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-customBlue rounded-full opacity-10"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-customOrange rounded-full opacity-8"></div>
         </div>
 
-        <div className="container mx-auto px-4 z-20">
-          <motion.div variants={itemVariants} className="text-center">
+        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left side - Content */}
+          <div className={`${heroInView ? "animate-fade-in" : "opacity-0"}`}>
             <div className="mb-8">
-              <motion.div
-                className="inline-block"
-                animate={{
-                  rotate: [0, 2, 0, -2, 0],
-                  transition: {
-                    repeat: Number.POSITIVE_INFINITY,
-                    duration: 5,
-                    ease: "easeInOut",
-                  },
-                }}
-              >
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-customOrange">Learnity</h2>
-                <p className="text-lg text-customOrange/80">EDUCATION UNPLUGGED</p>
-              </motion.div>
-            </div>
-
-            {/* Title with staggered animation */}
-            <div className="mb-10">
-              {["D", "A", "R", "E"].map((letter, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block text-7xl md:text-8xl font-black text-customBlack mx-1"
-                  initial={{ y: -100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 * index, duration: 0.5, type: "spring", stiffness: 120 }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              <br />
-              <motion.span
-                className="inline-block text-5xl md:text-6xl font-black text-customBlue mt-2"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                YOURSELF
-              </motion.span>
-            </div>
-
-            <motion.div
-              variants={itemVariants}
-              className="relative max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg border-b-4 border-customOrange"
-            >
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-customBlack">
-                Tabăra Learnity care te scoate din zona de confort
-              </h3>
-              <div className="space-y-4 text-lg">
-                <p className="italic text-customBlack/80">Cum ar fi să înfrunți fricile care te țin pe loc?</p>
-                <p className="italic text-customBlack/80">
-                  Să îți cunoști limitele, dar și să înveți cum să le impui cu încredere?
-                </p>
-                <p className="italic text-customBlack/80">Să devii o versiune mai curajoasă, mai autentică, mai TU?</p>
+              <div className="inline-block bg-customBlue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Tabără de dezvoltare personală
               </div>
-            </motion.div>
+              <h1 className="text-4xl md:text-6xl font-bangers text-customBlack mb-6 leading-tight">Dare Yourself</h1>
+              <div className="w-20 h-1 bg-customOrange rounded-full mb-6"></div>
+              <p className="text-xl md:text-2xl text-gray-700 font-medium mb-8 leading-relaxed">
+                Tabăra Learnity care îți activează curajul și vocea interioară
+              </p>
+            </div>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-10"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="#register"
-                className="inline-block bg-customOrange text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center">
-                  Înscrie-te acum
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <span className="absolute inset-0 bg-customBlue transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300 ease-out"></span>
+            {/* Key Info */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center text-gray-700 text-lg">
+                <div className="w-10 h-10 bg-customBlue rounded-full flex items-center justify-center mr-4">
+                  <MapPin className="text-white w-5 h-5" />
+                </div>
+                <span className="font-medium">Predeluț, Bran</span>
+              </div>
+              <div className="flex items-center text-gray-700 text-lg">
+                <div className="w-10 h-10 bg-customOrange rounded-full flex items-center justify-center mr-4">
+                  <Calendar className="text-white w-5 h-5" />
+                </div>
+                <span className="font-medium">17–23 august</span>
+              </div>
+              <div className="flex items-center text-gray-700 text-lg">
+                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-coins-icon lucide-hand-coins text-customWhite"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
+                </div>
+                <span className="font-medium">Preț: 2100 RON</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to='/dare-yourself-form' className="bg-customBlue hover:bg-customOrange text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg">
+                Înscrie-te acum
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+            </div>
+          </div>
 
-        {/* Decorative corner elements */}
-        <div className="absolute top-10 left-10">
-          <div className="w-20 h-20">
-            <div className="absolute w-4 h-20 bg-customOrange/30 rounded-full"></div>
-            <div className="absolute w-20 h-4 bg-customOrange/30 rounded-full"></div>
+          {/* Right side - Image */}
+          <div className={`${heroInView ? "animate-fade-in" : "opacity-0"}`} style={{ transitionDelay: "0.3s" }}>
+            <div className="relative">
+              <img
+                src={dare}
+                alt="Dare Yourself Camp"
+                className="w-full h-96 object-cover rounded-2xl shadow-xl"
+              />
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 p-4 rounded-xl shadow-lg">
+                <p className="text-lg font-medium text-customBlack">O săptămână de descoperire</p>
+                <p className="text-sm text-gray-600">și dezvoltare personală</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-10 right-10">
-          <div className="w-20 h-20">
-            <div className="absolute w-4 h-20 bg-customBlue/30 rounded-full"></div>
-            <div className="absolute w-20 h-4 bg-customBlue/30 rounded-full"></div>
-          </div>
-        </div>
-      </motion.section>
+      </section>
 
       {/* About Section */}
-      <motion.section
-        id="about"
-        ref={aboutRef}
-        initial="hidden"
-        animate={aboutInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="py-20 relative overflow-hidden"
+      <section
+      ref={aboutRef}
+      style={{ marginTop: '4rem', paddingTop: "4rem" }} //
+        className=" px-4 bg-gray-50" 
       >
-        {/* Diagonal background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-customLightBlue/30 to-white -skew-y-3 z-0"></div>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className={`${aboutInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Despre tabără</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto mb-12"></div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-40 h-40">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-customOrange/20">
-            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="5" strokeDasharray="10 5" />
-          </svg>
-        </div>
-        <div className="absolute bottom-0 left-0 w-40 h-40">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-customBlue/20">
-            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="5" strokeDasharray="10 5" />
-          </svg>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-            <motion.div variants={itemVariants} className="md:w-1/2">
-              <div className="relative">
-                <div className="absolute -right-6 -top-6 w-12 h-12 border-t-4 border-r-4 border-customOrange/40 rounded-tr-lg"></div>
-                <div className="absolute -left-6 -bottom-6 w-12 h-12 border-b-4 border-l-4 border-customBlue/40 rounded-bl-lg"></div>
-
-                <h2 className="text-4xl font-black mb-6 tracking-tighter relative text-customBlack text-right">
-                  <span className="relative">
-                    <span className="absolute -right-3 top-0 h-full w-1 bg-customOrange"></span>
-                    DESPRE <br />
-                    <span className="text-customOrange">DARE YOURSELF</span>
-                  </span>
-                </h2>
-
-                {/* Image placeholder */}
-                <div className="relative mt-8 rounded-lg overflow-hidden shadow-lg transform rotate-2">
-                  <div className="aspect-video bg-customLightOrange/30 flex items-center justify-center">
-                    <img src={dare} alt="dare yourself" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="md:w-1/2">
-              <div className="bg-white rounded-xl p-8 shadow-lg relative border-l-4 border-customBlue">
-                <p className="text-lg mb-6 text-customBlack leading-relaxed">
-                  <span className="font-bold text-customOrange">Dare Yourself</span> este o tabără de dezvoltare
-                  personală pentru liceeni care își doresc să iasă din zona de confort într-un cadru sigur și
-                  sprijinitor.
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="text-lg text-gray-700 leading-relaxed space-y-6">
+                <p>
+                  Vara asta, Learnity te provoacă să te descoperi cu adevărat.{" "}
+                  <strong className="text-customBlue">Dare Yourself</strong> este o tabără de dezvoltare personală
+                  pentru liceeni curajoși, dornici să-și descopere vocea, să-și înțeleagă emoțiile și să devină
+                  schimbarea pe care o vor în lume.
                 </p>
-
-                <p className="text-lg mb-6 text-customBlack leading-relaxed">
-                  Timp de o săptămână, participanții vor explora, prin activități intense și provocatoare, ce înseamnă
-                  curajul, autenticitatea și asumarea propriei identități.
+                <p>
+                  Timp de o săptămână, vei fi înconjurat de oameni ca tine – care caută sens, autenticitate și
+                  conexiune. Vei explora ce înseamnă să te înțelegi pe tine, să relaționezi sănătos cu ceilalți, să îți
+                  depășești fricile și să te implici în ceea ce contează cu adevărat.
                 </p>
-
-                <p className="text-lg text-customBlack leading-relaxed">
-                  Scopul este să își depășească fricile, să învețe să-și asculte vocea interioară și să pună limite
-                  sănătoase în relațiile cu ceilalți.
-                </p>
-
-                {/* Video placeholder */}
-                <div className="mt-8 rounded-lg overflow-hidden shadow-md">
-                  <div className="aspect-video bg-customLightBlue/20 flex items-center justify-center">
-                    <img src={dare2} alt="dare2" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Activities Section */}
-      <motion.section
-        id="activities"
-        ref={activitiesRef}
-        initial="hidden"
-        animate={activitiesInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="py-20 relative overflow-hidden"
-      >
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-white z-0">
-          <div className="absolute inset-0 opacity-10">
-            {[...Array(10)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-40 h-40 border-2 border-dashed border-customBlue rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  transform: `scale(${Math.random() * 0.5 + 0.5})`,
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-black mb-6 tracking-tighter text-customBlack inline-block relative">
-              <span className="relative z-10">CE SE ÎNTÂMPLĂ ÎN</span>
-              <br />
-              <span className="text-customOrange relative z-10">DARE YOURSELF?</span>
-              <svg
-                className="absolute -bottom-4 left-0 w-full h-4 text-customBlue/30"
-                viewBox="0 0 200 20"
-                preserveAspectRatio="none"
-              >
-                <path d="M0,10 Q50,20 100,10 T200,10" fill="none" stroke="currentColor" strokeWidth="5" />
-              </svg>
-            </h2>
-
-            <p className="text-lg max-w-3xl mx-auto text-customBlack/80 mt-8">
-              Întregul proces este ghidat de o echipă de psihologi care oferă susținere empatică și structurată, astfel
-              încât fiecare participant să își poată duce procesul în propriul ritm, cu autenticitate și respect față de
-              sine.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {/* Activity 1 */}
-            <motion.div
-              variants={itemVariants}
-              className="relative group"
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="absolute inset-0 bg-customOrange/20 rounded-xl transform rotate-3 group-hover:rotate-1 transition-transform duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 shadow-lg border-t-4 border-customOrange z-10">
-                <div className="w-16 h-16 bg-customOrange/10 rounded-full flex items-center justify-center mb-4">
-                  <Heart className="w-8 h-8 text-customOrange" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-4 text-customBlack">
-                  Ateliere de autocunoaștere și explorare emoțională
-                </h3>
-
-                <p className="text-customBlack/80">
-                  Descoperă-ți valorile, convingerile și emoțiile prin exerciții ghidate de specialiști în psihologie.
-                  Învață să te înțelegi mai bine și să-ți accepți toate părțile.
-                </p>
-
-                {/* Decorative corner */}
-                <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-customOrange/10 rounded-tl-full"></div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Activity 2 */}
-            <motion.div
-              variants={itemVariants}
-              className="relative group"
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="absolute inset-0 bg-customBlue/20 rounded-xl transform -rotate-3 group-hover:-rotate-1 transition-transform duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 shadow-lg border-t-4 border-customBlue z-10">
-                <div className="w-16 h-16 bg-customBlue/10 rounded-full flex items-center justify-center mb-4">
-                  <Users className="w-8 h-8 text-customBlue" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-4 text-customBlack">
-                  Provocări individuale și de grup care cer curaj și reflecție
-                </h3>
-
-                <p className="text-customBlack/80">
-                  Participă la activități care te scot din zona de confort într-un mediu sigur. Depășește-ți limitele și
-                  descoperă resurse interioare de care nu știai că dispui.
-                </p>
-
-                {/* Decorative corner */}
-                <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-customBlue/10 rounded-tl-full"></div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Activity 3 */}
-            <motion.div
-              variants={itemVariants}
-              className="relative group"
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="absolute inset-0 bg-customBlue/20 rounded-xl transform rotate-3 group-hover:rotate-1 transition-transform duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 shadow-lg border-t-4 border-customBlue z-10">
-                <div className="w-16 h-16 bg-customBlue/10 rounded-full flex items-center justify-center mb-4">
-                  <Mountain className="w-8 h-8 text-customBlue" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-4 text-customBlack">
-                  Activități în natură care aduc prezență, claritate și încredere
-                </h3>
-
-                <p className="text-customBlack/80">
-                  Conectează-te cu natura prin drumeții, exerciții de mindfulness în aer liber și activități care îți
-                  stimulează toate simțurile și te ajută să fii prezent în momentul actual.
-                </p>
-
-                {/* Decorative corner */}
-                <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-customBlue/10 rounded-tl-full"></div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Activity 4 */}
-            <motion.div
-              variants={itemVariants}
-              className="relative group"
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="absolute inset-0 bg-customOrange/20 rounded-xl transform -rotate-3 group-hover:-rotate-1 transition-transform duration-300"></div>
-              <div className="relative bg-white rounded-xl p-6 shadow-lg border-t-4 border-customOrange z-10">
-                <div className="w-16 h-16 bg-customOrange/10 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-customOrange" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-4 text-customBlack">
-                  Discuții de seară și spații sigure de împărtășire
-                </h3>
-
-                <p className="text-customBlack/80">
-                  Participă la sesiuni de reflecție și împărtășire în care poți exprima liber gândurile și emoțiile
-                  într-un spațiu sigur, fără judecată, cu susținerea grupului și a facilitatorilor.
-                </p>
-
-                {/* Decorative corner */}
-                <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-customOrange/10 rounded-tl-full"></div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Logistics Section */}
-      <motion.section
-        id="logistics"
-        ref={logisticsRef}
-        initial="hidden"
-        animate={logisticsInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="py-20 relative overflow-hidden"
-      >
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-customLightBlue/30 via-white to-customLightOrange/30 z-0"></div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-8">
-          <svg className="w-full h-full text-customOrange/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-            <path d="M0,0 C25,10 75,10 100,0 L100,10 L0,10 Z" fill="currentColor" />
-          </svg>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full h-8">
-          <svg className="w-full h-full text-customBlue/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-            <path d="M0,10 C25,0 75,0 100,10 L100,0 L0,0 Z" fill="currentColor" />
-          </svg>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-black mb-6 tracking-tighter text-customBlack inline-block relative">
-              <span className="relative z-10">DETALII</span>
-              <br />
-              <span className="text-customOrange relative z-10">LOGISTICE</span>
-              <motion.div
-                className="absolute -inset-4 border-2 border-dashed border-customBlue/30 rounded-xl"
-                animate={{
-                  rotate: [0, 1, 0, -1, 0],
-                  transition: {
-                    repeat: Number.POSITIVE_INFINITY,
-                    duration: 5,
-                    ease: "easeInOut",
-                  },
-                }}
-              ></motion.div>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 shadow-lg relative overflow-hidden">
-              {/* Decorative corner */}
-              <div className="absolute top-0 left-0 w-20 h-20 bg-customOrange/10 rounded-br-full"></div>
-
-              <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-customOrange/10 rounded-full flex items-center justify-center mr-4">
-                    <MapPin className="w-6 h-6 text-customOrange" />
-                  </div>
-                  <h3 className="text-xl font-bold text-customBlack">Locația</h3>
-                </div>
-
-                <p className="text-lg font-medium text-customBlack mb-4">Predeluț, Bran</p>
-
-                {/* Google Maps placeholder */}
-                <div className="aspect-video bg-customLightOrange/20 rounded-lg flex items-center justify-center">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11179.97299316975!2d25.342336825850992!3d45.53034141903415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b3486eb99cd875%3A0xc5d78c75f78b9f74!2s507026%20Predelu%C8%9B!5e0!3m2!1sen!2sro!4v1747562044184!5m2!1sen!2sro" width="600" height="450" style={{ border:0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-
-                <div className="mt-4 text-customBlack/80">
-                  <p>
-                    Tabăra se va desfășura într-o locație pitorească din Predeluț, Bran, înconjurată de natură și
-                    peisaje montane.
+                <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-customBlue">
+                  <p className="font-medium text-customBlack">
+                    Este o tabără care îmbină jocul, introspecția, provocările și comunitatea, într-un proces ghidat de
+                    o echipă de psihologi cu experiență.
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 shadow-lg relative overflow-hidden">
-              {/* Decorative corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-customBlue/10 rounded-bl-full"></div>
-
-              <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-customBlue/10 rounded-full flex items-center justify-center mr-4">
-                    <Calendar className="w-6 h-6 text-customBlue" />
-                  </div>
-                  <h3 className="text-xl font-bold text-customBlack">Perioada</h3>
-                </div>
-
-                <p className="text-lg font-medium text-customBlack mb-4">14-20 iulie 2025</p>
-
-                {/* Calendar image placeholder */}
-                <div className="aspect-video bg-customLightBlue/20 rounded-lg flex items-center justify-center">
-                  <img src={dareCalendar} alt="dare yourself calendar" />
-                </div>
-
-                <div className="mt-4 text-customBlack/80">
-                  <p>Tabăra durează 7 zile pline de activități, provocări și experiențe transformatoare.</p>
-                </div>
-              </div>
-            </motion.div>
+      {/* What We Offer Section */}
+      <section ref={offersRef} className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className={`text-center mb-16 ${offersInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Ce îți propunem?</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto"></div>
           </div>
 
-          <motion.div variants={itemVariants} className="mt-12 text-center">
-            <div className="inline-block bg-white px-8 py-6 rounded-xl shadow-lg border-b-4 border-customOrange">
-              <h3 className="text-xl font-bold mb-4 text-customBlack">Ce trebuie să știi:</h3>
-              <ul className="text-left space-y-2 text-customBlack/80">
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Tabăra este destinată liceenilor cu vârste între 14 și 18 ani</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Cazarea și mesele sunt incluse în prețul taberei</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Transportul până la locație este inclus</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-customOrange rounded-full mt-2 mr-2"></div>
-                  <span>Numărul de locuri este limitat la 35 de participanți</span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {offers.map((offer, index) => (
+              <div
+                key={index}
+                className={`${offersInView ? "animate-fade-in" : "opacity-0"} bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100`}
+                style={{ transitionDelay: `${index * 0.2}s` }}
+              >
+                <div className="w-12 h-12 bg-customBlue rounded-lg flex items-center justify-center text-white mb-4">
+                  {offer.icon}
+                </div>
+                <h3 className="text-lg font-bold text-customBlack mb-3">{offer.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{offer.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Registration Section */}
-      <motion.section
-        id="register"
-        ref={registerRef}
-        initial="hidden"
-        animate={registerInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="py-20 bg-white relative overflow-hidden"
-      >
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          {/* Diagonal stripes */}
+      {/* Main Themes Section */}
+      <section ref={themesRef} className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className={`text-center mb-16 ${themesInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Temele principale</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto mb-8"></div>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Tot ce vei face în tabără este construit în jurul a trei direcții fundamentale de dezvoltare personală:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {themes.map((theme, index) => (
+              <div
+                key={index}
+                className={`${themesInView ? "animate-fade-in" : "opacity-0"} bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 ${theme.accentColor}`}
+                style={{ transitionDelay: `${index * 0.2}s` }}
+              >
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-customBlue mb-4 mx-auto">
+                  {theme.icon}
+                </div>
+                <h3 className="text-xl font-bold text-customBlack mb-3 text-center">{theme.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-center">{theme.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section ref={teamRef} className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className={`text-center mb-16 ${teamInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Cine te va ghida</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto mb-8"></div>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              Echipa de traineri este formată din psihologi cu experiență, care vor crea un spațiu sigur, cald și
+              stimulant, în care să te simți văzut, susținut și provocat:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className={`${teamInView ? "animate-fade-in" : "opacity-0"} bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300`}
+                style={{ transitionDelay: `${index * 0.2}s` }}
+              >
+                <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-customBlack mb-2">{member.name}</h3>
+                  <p className="text-customBlue font-medium">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section ref={locationRef} className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className={`text-center mb-16 ${locationInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Locația</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto mb-8"></div>
+            <p className="text-lg text-gray-700 mb-8">
+              Tabăra se va desfășura în Predeluț, Bran - un loc perfect pentru dezvoltare personală și conexiune cu
+              natura.
+            </p>
+          </div>
+
           <div
-            className="absolute top-0 left-0 w-full h-full opacity-10"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(45deg, #05be9e, #05be9e 10px, transparent 10px, transparent 20px)",
-            }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-black mb-6 tracking-tighter text-customBlack">
-              <span className="relative">
-                <span className="text-customOrange">ÎNSCRIE-TE</span>
-                <br />
-                ACUM
-                <motion.div
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-customBlue"
-                  animate={{
-                    scaleX: [0, 1, 1, 0],
-                    x: ["0%", "0%", "0%", "100%"],
-                    transition: {
-                      repeat: Number.POSITIVE_INFINITY,
-                      duration: 3,
-                      ease: "easeInOut",
-                    },
-                  }}
-                ></motion.div>
-              </span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="bg-white rounded-xl p-8 shadow-xl max-w-3xl mx-auto relative overflow-hidden"
+            className={`${locationInView ? "animate-fade-in" : "opacity-0"} bg-white rounded-2xl p-8 shadow-lg`}
+            style={{ transitionDelay: "0.2s" }}
           >
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-full">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-customOrange via-customBlue to-customOrange"></div>
-              <div className="absolute -top-6 -left-6 w-24 h-24 border-t-4 border-l-4 border-customOrange/20 rounded-tl-3xl"></div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-4 border-r-4 border-customBlue/20 rounded-br-3xl"></div>
-            </div>
-
-            <div className="relative">
-              <h3 className="text-2xl font-bold text-center text-customBlack mb-6">Formular de înscriere</h3>
-
-              <p className="text-center text-customBlack/80 mb-8">
-                Completează formularul de mai jos pentru a-ți rezerva locul în tabăra Dare Yourself. Locurile sunt
-                limitate, așa că înscrie-te cât mai curând!
-              </p>
-
-              <p className="text-center font-bold text-lg text-customOrange mb-8">
-                Formular de înscriere va fi adăugat aici
-              </p>
-
-              <div className="text-center">
-                <button className="bg-customOrange text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-                  <span className="relative z-10 flex items-center">
-                    Înscrie-te acum
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                  <span className="absolute inset-0 bg-customBlue transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300 ease-out"></span>
-                </button>
+            {/* Google Maps Embed Placeholder */}
+            <div className="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300">
+              <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              <div className="bg-gray-200 rounded-lg p-4" style={{ height: "300px" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11179.97299316975!2d25.342336825850992!3d45.53034141903415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b3486eb99cd875%3A0xc5d78c75f78b9f74!2s507026%20Predelu%C8%9B!5e0!3m2!1sen!2sro!4v1747562044184!5m2!1sen!2sro"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, width: "100%", height: "100%" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Locație tabără"
+                ></iframe>
               </div>
             </div>
-          </motion.div>
+
+            <div className="mt-8 grid md:grid-cols-2 gap-6">
+              <div className="flex items-center">
+                <MapPin className="w-6 h-6 text-customBlue mr-3" />
+                <div>
+                  <p className="font-medium text-customBlack">Adresa</p>
+                  <p className="text-gray-600">Predeluț, Bran, Brașov</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <Phone className="w-6 h-6 text-customBlue mr-3" />
+                <div>
+                  <p className="font-medium text-customBlack">Contact</p>
+                  <p className="text-gray-600">Pentru detalii despre locație</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* Practical Information Section */}
+      <section ref={practicalRef} className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className={`text-center mb-16 ${practicalInView ? "animate-fade-in" : "opacity-0"}`}>
+            <h2 className="text-3xl md:text-4xl font-bangers text-customBlack mb-8">Informații practice</h2>
+            <div className="w-16 h-1 bg-customOrange rounded-full mx-auto"></div>
+          </div>
+
+          <div
+            className={`${practicalInView ? "animate-fade-in" : "opacity-0"} bg-white rounded-2xl p-8 shadow-lg border border-gray-100`}
+            style={{ transitionDelay: "0.2s" }}
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-customBlue rounded-lg flex items-center justify-center mr-4">
+                    <Calendar className="text-white w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-customBlack">Perioada</p>
+                    <p className="text-gray-600">17–23 august</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-customOrange rounded-lg flex items-center justify-center mr-4">
+                    <MapPin className="text-white w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-customBlack">Locația</p>
+                    <p className="text-gray-600">Predeluț, Bran</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                    <Users className="text-white w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-customBlack">Vârsta</p>
+                    <p className="text-gray-600">Liceeni (14-18 ani)</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                    <CheckCircle className="text-white w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-customBlack">Inclus</p>
+                    <p className="text-gray-600">Cazare, masă, activități</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="mt-12 text-center">
+              <div className="bg-gray-50 rounded-xl p-8 border-l-4 border-customBlue">
+                <h3 className="text-2xl font-bold text-customBlack mb-4">Gata să îți descoperi curajul?</h3>
+                <p className="text-gray-700 mb-6">
+                  Alătură-te unei experiențe care îți va schimba perspectiva asupra ta și asupra lumii.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/dare-yourself-form" className="bg-customBlue hover:bg-customOrange text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg">
+                    Înscrie-te la Dare Yourself
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                  <Link to="/contact" className="border-2 border-customBlue text-customBlue hover:bg-customBlue hover:text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
+                    Contactează-ne pentru detalii
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

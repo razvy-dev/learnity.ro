@@ -3,6 +3,7 @@ import { onCall } from 'firebase-functions/v2/https';
 import { initializeApp, applicationDefault } from 'firebase-admin/app';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import Stripe from 'stripe';
+import { addDoc, collection } from 'firebase/firestore';
 
 // Initialize Firebase Admin
 initializeApp({ credential: applicationDefault() });
@@ -78,14 +79,43 @@ const stripeSecret = defineSecret("STRIPE_SECRET_KEY");
 //   }
 // });
 
+async function submitFormData(formData) {
+    try {
+      const docRef = await addDoc(collection(db, "wtf"), {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        school: formData.school,
+        grade: formData.grade,
+        attendanceDays: formData.attendanceDays,
+        reason: formData.reason,
+        referralSource: formData.referralSource,
+        createdAt: new Date() // optional: timestamp
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+    }
+
 export const createCheckoutSession = onCall({ secrets: [stripeSecret] }, async (request) => {
   const stripe = new Stripe(stripeSecret.value(), {
     apiVersion: "2023-10-16",
   });
 
-  const { name, email, attendanceDays } = request.data;
+  const { name,
+          email,
+          phone,
+          school,
+          grade,
+          attendanceDays,
+          reason,
+          referralSource, } = request.data;
 
   console.log("Received data:", { name, email, attendanceDays });
+
+  submitFormData({ name: name, email: email, phone: phone, school: school, grade: grade, attendanceDays: attendanceDays, reason: reason, referralSource: referralSource });
 
   if (!name || !email || !attendanceDays) {
     console.error("Missing required fields");
